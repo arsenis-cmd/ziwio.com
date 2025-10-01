@@ -1436,6 +1436,7 @@
         });
         
         // Form submission
+        // Form submission
         waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -1445,26 +1446,29 @@
                 interest: document.getElementById('interest').value,
                 experience: document.getElementById('experience').value,
                 newsletter: document.getElementById('newsletter').checked,
-                timestamp: new Date().toISOString()
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
             };
             
             const submitBtn = waitlistForm.querySelector('.submit-btn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Joining...';
             
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            console.log('Waitlist signup:', formData);
-            const waitlist = JSON.parse(localStorage.getItem('ziwio_waitlist') || '[]');
-            waitlist.push(formData);
-            localStorage.setItem('ziwio_waitlist', JSON.stringify(waitlist));
-            
-            closeWaitlistModal();
-            waitlistForm.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Join Waitlist →';
-            
-            showSuccessMessage(formData.fullName);
+            try {
+                // Add to Firestore
+                await db.collection('waitlist').add(formData);
+                
+                closeWaitlistModal();
+                waitlistForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Waitlist →';
+                
+                showSuccessMessage(formData.fullName);
+            } catch (error) {
+                console.error('Error adding to waitlist:', error);
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Waitlist →';
+            }
         });
         
         function showSuccessMessage(name) {
@@ -1542,6 +1546,26 @@
                 waitlistCount.textContent = count.toLocaleString();
             }, 5000);
         }
+        
+    </script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGdoi3WkdT_IDJ8rSWNX1Woo-fdTYTjzs",
+            authDomain: "ziwio-waitlist.firebaseapp.com",
+            projectId: "ziwio-waitlist",
+            storageBucket: "ziwio-waitlist.firebasestorage.app",
+            messagingSenderId: "638339110715",
+            appId: "1:638339110715:web:159b7d9dda7bef0e18891e"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
     </script>
 </body>
 </html>
