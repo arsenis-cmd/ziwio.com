@@ -513,8 +513,11 @@
         }
         
         .security-feature .feature-icon {
-            font-size: 3rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.1rem;
         }
         
         .security-feature h3 {
@@ -587,8 +590,15 @@
         .cta-features .feature {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             color: var(--platinum-silver);
+        }
+        
+        .cta-features .feature span:first-child {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.05rem;
         }
         
         /* Modal */
@@ -1014,7 +1024,7 @@
 
             <div class="features-grid">
                 <div class="feature-card premium">
-                    <div class="feature-icon">🤖</div>
+                    <div class="feature-icon">AI</div>
                     <h3>AI Trading Bots</h3>
                     <p>10 advanced trading strategies with machine learning optimization</p>
                     <div class="feature-stats">
@@ -1025,7 +1035,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">💎</div>
+                    <div class="feature-icon">WALLET</div>
                     <h3>Universal Wallet</h3>
                     <p>50+ cryptocurrencies across 15 blockchains in one secure wallet</p>
                     <div class="feature-stats">
@@ -1036,7 +1046,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌾</div>
+                    <div class="feature-icon">STAKE</div>
                     <h3>Staking & Yield</h3>
                     <p>Auto-compounding staking with up to 15% APY across protocols</p>
                     <div class="feature-stats">
@@ -1047,7 +1057,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌉</div>
+                    <div class="feature-icon">BRIDGE</div>
                     <h3>Cross-Chain Bridge</h3>
                     <p>Seamless asset transfers across 15+ blockchains in minutes</p>
                     <div class="feature-stats">
@@ -1058,7 +1068,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🖼️</div>
+                    <div class="feature-icon">NFT</div>
                     <h3>NFT Marketplace</h3>
                     <p>Create, trade, and manage NFT collections with AI generation</p>
                     <div class="feature-stats">
@@ -1069,7 +1079,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon">LAUNCH</div>
                     <h3>Token Launchpad</h3>
                     <p>Launch tokens and NFT projects with built-in fundraising tools</p>
                     <div class="feature-stats">
@@ -1095,7 +1105,7 @@
 
                     <div class="bot-strategies">
                         <div class="strategy">
-                            <div class="strategy-icon">📊</div>
+                            <div class="strategy-icon">GRID</div>
                             <div class="strategy-info">
                                 <h4>Grid Trading</h4>
                                 <p>Automated buy/sell orders in price ranges</p>
@@ -1104,7 +1114,7 @@
                         </div>
 
                         <div class="strategy">
-                            <div class="strategy-icon">🚀</div>
+                            <div class="strategy-icon">MOMENTUM</div>
                             <div class="strategy-info">
                                 <h4>Momentum Trading</h4>
                                 <p>AI-driven trend following with risk management</p>
@@ -1113,7 +1123,7 @@
                         </div>
 
                         <div class="strategy">
-                            <div class="strategy-icon">🧠</div>
+                            <div class="strategy-icon">AI</div>
                             <div class="strategy-info">
                                 <h4>AI Predictive</h4>
                                 <p>Neural network price prediction with 85% accuracy</p>
@@ -1162,25 +1172,25 @@
 
             <div class="security-features">
                 <div class="security-feature">
-                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-icon">BOUNTY</div>
                     <h3>$5M Bug Bounty</h3>
                     <p>Largest bug bounty program in DeFi</p>
                 </div>
 
                 <div class="security-feature">
-                    <div class="feature-icon">🔍</div>
+                    <div class="feature-icon">AUDIT</div>
                     <h3>Continuous Audits</h3>
                     <p>Quarterly audits by top security firms</p>
                 </div>
 
                 <div class="security-feature">
-                    <div class="feature-icon">🏦</div>
+                    <div class="feature-icon">INSURE</div>
                     <h3>$100M Insurance</h3>
                     <p>Comprehensive coverage for user funds</p>
                 </div>
 
                 <div class="security-feature">
-                    <div class="feature-icon">🔐</div>
+                    <div class="feature-icon">SECURE</div>
                     <h3>Multi-Signature</h3>
                     <p>Hardware security modules and cold storage</p>
                 </div>
@@ -1200,19 +1210,19 @@
                 <input type="email" placeholder="Enter your email" class="email-input" id="waitlist-email">
                 <button class="btn-primary-large" id="join-waitlist-btn">Join Waitlist →</button>
             </div>
-            <p class="waitlist-note">🎁 Early access + Lifetime Premium for first 1,000 users</p>
+            <p class="waitlist-note">Early access + Lifetime Premium for first 1,000 users</p>
             
             <div class="cta-features">
                 <div class="feature">
-                    <span>🛡️</span>
+                    <span>SECURE</span>
                     <span>Bank-Grade Security</span>
                 </div>
                 <div class="feature">
-                    <span>🤖</span>
+                    <span>AI</span>
                     <span>24/7 AI Trading</span>
                 </div>
                 <div class="feature">
-                    <span>📊</span>
+                    <span>PRO</span>
                     <span>Professional Tools</span>
                 </div>
             </div>
@@ -1230,10 +1240,10 @@
                         institutional custody, and luxury user experience.
                     </p>
                     <div class="social-links">
-                        <a href="#">𝕏</a>
-                        <a href="#">D</a>
-                        <a href="#">T</a>
-                        <a href="#">in</a>
+                        <a href="#" aria-label="Twitter">X</a>
+                        <a href="#" aria-label="Discord">D</a>
+                        <a href="#" aria-label="Telegram">T</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
                     </div>
                 </div>
 
@@ -1299,7 +1309,7 @@
             </div>
             
             <div class="perks-list">
-                <h4>🎁 Early Access Perks</h4>
+                <h4>Early Access Perks</h4>
                 <ul>
                     <li>Lifetime Premium subscription (worth $360/year)</li>
                     <li>Priority customer support</li>
@@ -1468,7 +1478,7 @@
                 max-width: 500px;
             `;
             message.innerHTML = `
-                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Success!</div>
                 <div>Welcome to the waitlist, ${name}!</div>
                 <div style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">
                     Check your email for confirmation and next steps
