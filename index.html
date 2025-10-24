@@ -69,6 +69,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
         
         .main-nav ul {
@@ -724,6 +725,15 @@
             cursor: pointer;
         }
         
+        .checkbox-group label a {
+            color: var(--champagne-gold);
+            text-decoration: none;
+        }
+        
+        .checkbox-group label a:hover {
+            text-decoration: underline;
+        }
+        
         .submit-btn {
             width: 100%;
             padding: 1.25rem;
@@ -776,62 +786,6 @@
             color: var(--emerald-green);
             font-weight: bold;
             margin-right: 0.5rem;
-        }
-        
-        /* Video Modal */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .video-modal.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .video-container {
-            width: 90%;
-            max-width: 1200px;
-            aspect-ratio: 16/9;
-            background: var(--obsidian-black);
-            border-radius: 1rem;
-            overflow: hidden;
-            position: relative;
-            border: 2px solid var(--champagne-gold);
-        }
-        
-        .video-close {
-            position: absolute;
-            top: -3rem;
-            right: 0;
-            background: none;
-            border: none;
-            color: var(--ivory-white);
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 10001;
-            transition: color 0.3s;
-        }
-        
-        .video-close:hover {
-            color: var(--champagne-gold);
-        }
-        
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
         }
         
         /* Footer */
@@ -958,7 +912,7 @@
     <!-- Navigation -->
     <header class="main-navigation">
         <div class="nav-container">
-            <div class="logo">ZIWIO</div>
+            <a href="/" class="logo">ZIWIO</a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#features">Features</a></li>
@@ -1021,7 +975,6 @@
                     in one comprehensive platform
                 </p>
             </div>
-
             <div class="features-grid">
                 <div class="feature-card premium">
                     <div class="feature-icon">AI</div>
@@ -1033,7 +986,6 @@
                     </div>
                     <a href="#" class="feature-link">Learn More →</a>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">WALLET</div>
                     <h3>Universal Wallet</h3>
@@ -1044,7 +996,6 @@
                     </div>
                     <a href="#" class="feature-link">Learn More →</a>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">STAKE</div>
                     <h3>Staking & Yield</h3>
@@ -1055,7 +1006,6 @@
                     </div>
                     <a href="#" class="feature-link">Learn More →</a>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">BRIDGE</div>
                     <h3>Cross-Chain Bridge</h3>
@@ -1066,7 +1016,6 @@
                     </div>
                     <a href="#" class="feature-link">Learn More →</a>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">NFT</div>
                     <h3>NFT Marketplace</h3>
@@ -1077,7 +1026,6 @@
                     </div>
                     <a href="#" class="feature-link">Learn More →</a>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon">LAUNCH</div>
                     <h3>Token Launchpad</h3>
@@ -1102,7 +1050,6 @@
                         Revolutionary trading automation with 10 distinct strategies
                         powered by machine learning and real-time market analysis
                     </p>
-
                     <div class="bot-strategies">
                         <div class="strategy">
                             <div class="strategy-icon">GRID</div>
@@ -1112,7 +1059,6 @@
                                 <span class="strategy-performance">+12.5% Monthly</span>
                             </div>
                         </div>
-
                         <div class="strategy">
                             <div class="strategy-icon">MOMENTUM</div>
                             <div class="strategy-info">
@@ -1121,7 +1067,6 @@
                                 <span class="strategy-performance">+25.8% Monthly</span>
                             </div>
                         </div>
-
                         <div class="strategy">
                             <div class="strategy-icon">AI</div>
                             <div class="strategy-info">
@@ -1131,7 +1076,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="subscription-tiers">
                         <div class="tier">
                             <span class="tier-name">Basic</span>
@@ -1150,7 +1094,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="showcase-visual">
                     <div class="bot-dashboard">
                         Interactive Bot Dashboard Demo
@@ -1169,26 +1112,22 @@
                     Bank-grade security with transparent audits and insurance coverage
                 </p>
             </div>
-
             <div class="security-features">
                 <div class="security-feature">
                     <div class="feature-icon">BOUNTY</div>
                     <h3>$5M Bug Bounty</h3>
                     <p>Largest bug bounty program in DeFi</p>
                 </div>
-
                 <div class="security-feature">
                     <div class="feature-icon">AUDIT</div>
                     <h3>Continuous Audits</h3>
                     <p>Quarterly audits by top security firms</p>
                 </div>
-
                 <div class="security-feature">
                     <div class="feature-icon">INSURE</div>
                     <h3>$100M Insurance</h3>
                     <p>Comprehensive coverage for user funds</p>
                 </div>
-
                 <div class="security-feature">
                     <div class="feature-icon">SECURE</div>
                     <h3>Multi-Signature</h3>
@@ -1246,7 +1185,6 @@
                         <a href="#" aria-label="LinkedIn">in</a>
                     </div>
                 </div>
-
                 <div class="footer-section">
                     <h3>Features</h3>
                     <ul>
@@ -1257,7 +1195,6 @@
                         <li><a href="#">Token Launchpad</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h3>Company</h3>
                     <ul>
@@ -1268,7 +1205,6 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h3>Developers</h3>
                     <ul>
@@ -1279,19 +1215,17 @@
                         <li><a href="#">Status Page</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="#">Compliance</a></li>
                         <li><a href="#">Security</a></li>
                         <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2024 Ziwio Technologies. All rights reserved.</p>
             </div>
@@ -1363,7 +1297,7 @@
                 <div class="checkbox-group">
                     <input type="checkbox" id="terms" name="terms" required>
                     <label for="terms">
-                        I agree to the Terms of Service and Privacy Policy *
+                        I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a> *
                     </label>
                 </div>
                 
@@ -1372,7 +1306,24 @@
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGdoi3WkdT_IDJ8rSWNX1Woo-fdTYTjzs",
+            authDomain: "ziwio-waitlist.firebaseapp.com",
+            projectId: "ziwio-waitlist",
+            storageBucket: "ziwio-waitlist.firebasestorage.app",
+            messagingSenderId: "638339110715",
+            appId: "1:638339110715:web:159b7d9dda7bef0e18891e"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1436,7 +1387,6 @@
         });
         
         // Form submission
-        // Form submission
         waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -1454,7 +1404,6 @@
             submitBtn.textContent = 'Joining...';
             
             try {
-                // Add to Firestore
                 await db.collection('waitlist').add(formData);
                 
                 closeWaitlistModal();
@@ -1495,14 +1444,10 @@
                 setTimeout(() => message.remove(), 500);
             }, 4000);
         }
-        
-        // Demo video - Open in new window
+
+        // Demo video
         document.querySelectorAll('.btn-demo').forEach(button => {
             button.addEventListener('click', () => {
-                // Open the demo artifact in a new window
-                window.open('about:blank', 'ZiwioDemo', 'width=1200,height=800');
-                
-                // Or show a message to open it
                 const message = document.createElement('div');
                 message.style.cssText = `
                     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -1527,16 +1472,10 @@
                     </button>
                 `;
                 document.body.appendChild(message);
-                
-                // Open the separate demo artifact
-                setTimeout(() => {
-                    message.innerHTML += '<div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">View the "Ziwio Platform Demo Video" artifact to see the full presentation</div>';
-                }, 1000);
-                
                 setTimeout(() => message.remove(), 5000);
             });
         });
-        
+
         // Waitlist counter animation
         const waitlistCount = document.querySelector('.waitlist-count');
         if (waitlistCount) {
@@ -1546,26 +1485,6 @@
                 waitlistCount.textContent = count.toLocaleString();
             }, 5000);
         }
-        
-    </script>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAGdoi3WkdT_IDJ8rSWNX1Woo-fdTYTjzs",
-            authDomain: "ziwio-waitlist.firebaseapp.com",
-            projectId: "ziwio-waitlist",
-            storageBucket: "ziwio-waitlist.firebasestorage.app",
-            messagingSenderId: "638339110715",
-            appId: "1:638339110715:web:159b7d9dda7bef0e18891e"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
     </script>
 </body>
 </html>
