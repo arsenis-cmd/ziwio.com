@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziwio - The Bloomberg Terminal for DeFi</title>
-    <meta name="description" content="Professional-grade DeFi platform with AI-powered trading bots, institutional custody, and luxury user experience. Join 100,000+ users managing $2.4B+ in assets.">
+    <title>Ziwio - Complete Blockchain Financial Ecosystem</title>
+    <meta name="description" content="The world's first complete blockchain financial platform combining multi-currency wallet, AI-powered trading, NFT marketplace with real-world asset tokenization, DeFi staking, stock trading, and DAO governance.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
         
@@ -172,7 +172,7 @@
             font-size: 1.25rem;
             color: var(--platinum-silver);
             margin: 2rem auto;
-            max-width: 800px;
+            max-width: 900px;
         }
         
         .hero-stats {
@@ -311,8 +311,11 @@
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.1rem;
         }
         
         .feature-card h3 {
@@ -352,11 +355,79 @@
         .feature-link:hover {
             opacity: 0.8;
         }
+
+        /* Blockchain Section */
+        .blockchain-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .blockchain-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blockchain-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .blockchain-feature {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--deep-charcoal);
+            border-radius: 0.5rem;
+            border: 1px solid var(--warm-gray);
+            transition: all 0.3s;
+        }
+
+        .blockchain-feature:hover {
+            border-color: var(--champagne-gold);
+        }
+
+        .blockchain-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            min-width: 80px;
+        }
+
+        .blockchain-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blockchain-info p {
+            color: var(--platinum-silver);
+            font-size: 0.95rem;
+        }
+
+        .supported-coins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .coin-tag {
+            padding: 0.5rem 1rem;
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--platinum-silver);
+        }
         
         /* Trading Bots Section */
         .trading-bots-showcase {
             padding: 8rem 2rem;
-            background: var(--obsidian-black);
+            background: var(--deep-charcoal);
         }
         
         .showcase-content {
@@ -385,7 +456,7 @@
             display: flex;
             gap: 1.5rem;
             padding: 1.5rem;
-            background: var(--deep-charcoal);
+            background: var(--obsidian-black);
             border-radius: 0.5rem;
             border: 1px solid var(--warm-gray);
             transition: all 0.3s;
@@ -396,7 +467,10 @@
         }
         
         .strategy-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            min-width: 100px;
         }
         
         .strategy-info h4 {
@@ -413,76 +487,85 @@
             color: var(--emerald-green);
             font-weight: 600;
         }
-        
-        .subscription-tiers {
-            display: flex;
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+            margin-top: 2rem;
         }
-        
-        .tier {
-            flex: 1;
-            padding: 1.5rem;
-            background: var(--deep-charcoal);
+
+        .ai-feature-tag {
+            padding: 1rem;
+            background: var(--obsidian-black);
             border: 1px solid var(--warm-gray);
             border-radius: 0.5rem;
-            display: flex;
-            flex-direction: column;
             text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .tier:hover {
-            border-color: var(--champagne-gold);
-            transform: translateY(-4px);
-        }
-        
-        .tier.popular {
-            border-color: var(--champagne-gold);
-            background: linear-gradient(135deg, #141416 0%, #262629 100%);
-            position: relative;
-        }
-        
-        .tier.popular::before {
-            content: 'POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--champagne-gold);
-            color: var(--obsidian-black);
-            padding: 0.25rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .tier-name {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tier-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--champagne-gold);
-            margin: 0.5rem 0;
-        }
-        
-        .tier-bots {
-            color: var(--platinum-silver);
             font-size: 0.875rem;
+            color: var(--platinum-silver);
+        }
+
+        .ai-feature-tag strong {
+            display: block;
+            color: var(--champagne-gold);
+            margin-bottom: 0.25rem;
         }
         
-        .bot-dashboard {
+        /* RWA Section */
+        .rwa-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .rwa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+
+        .rwa-card {
             background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
             border-radius: 1rem;
             padding: 2rem;
-            border: 1px solid var(--warm-gray);
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .rwa-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--champagne-gold);
+        }
+
+        .rwa-icon {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            margin-bottom: 1rem;
+        }
+
+        .rwa-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rwa-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rwa-card li {
             color: var(--platinum-silver);
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .rwa-card li::before {
+            content: "• ";
+            color: var(--champagne-gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
         
         /* Security Section */
@@ -528,6 +611,46 @@
         
         .security-feature p {
             color: var(--platinum-silver);
+        }
+
+        /* Integration Section */
+        .integration-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+
+        .integration-card {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .integration-card:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-2px);
+        }
+
+        .integration-card strong {
+            display: block;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .integration-card span {
+            color: var(--platinum-silver);
+            font-size: 0.875rem;
         }
         
         /* CTA Section */
@@ -586,6 +709,7 @@
             justify-content: center;
             gap: 3rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
         
         .cta-features .feature {
@@ -782,7 +906,7 @@
         }
         
         .perks-list li::before {
-            content: "✓ ";
+            content: "• ";
             color: var(--emerald-green);
             font-weight: bold;
             margin-right: 0.5rem;
@@ -880,7 +1004,7 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .display-large {
                 font-size: 2.5rem;
             }
@@ -890,11 +1014,13 @@
                 gap: 2rem;
             }
             
-            .showcase-content {
+            .showcase-content,
+            .blockchain-content {
                 grid-template-columns: 1fr;
             }
             
-            .features-grid {
+            .features-grid,
+            .rwa-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -904,6 +1030,15 @@
             
             .main-nav {
                 display: none;
+            }
+
+            .ai-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-features {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -915,15 +1050,16 @@
             <a href="/" class="logo">ZIWIO</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#trading-bots">Trading Bots</a></li>
+                    <li><a href="#features">Platform</a></li>
+                    <li><a href="#blockchain">Blockchain</a></li>
+                    <li><a href="#trading">AI Trading</a></li>
+                    <li><a href="#rwa">Real Assets</a></li>
                     <li><a href="#security">Security</a></li>
-                    <li><a href="#about">About</a></li>
                 </ul>
             </nav>
             <div class="nav-actions">
-                <button class="btn-secondary">Login</button>
-                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Documentation</button>
+                <button class="btn-primary">Join Waitlist</button>
             </div>
         </div>
     </header>
@@ -933,30 +1069,28 @@
         <div class="hero-background"></div>
         <div class="hero-content">
             <h1 class="display-large">
-                The Bloomberg Terminal for <span class="gradient-text">DeFi</span>
+                Complete <span class="gradient-text">Blockchain Financial</span> Ecosystem
             </h1>
             <p class="hero-subtitle">
-                Professional-grade DeFi platform with AI-powered trading bots,
-                institutional custody, and luxury user experience.
-                <strong>Launching Soon</strong> - Join the waitlist today.
+                The world's first comprehensive platform combining multi-currency wallet, AI-powered trading, NFT marketplace with real-world asset tokenization, DeFi staking, stock trading, cross-chain bridges, and DAO governance. All powered by our proprietary binary tree blockchain.
             </p>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number">10+</span>
+                    <span class="stat-number">13+</span>
+                    <span class="stat-label">Supported Cryptocurrencies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
                     <span class="stat-label">AI Trading Strategies</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Supported Blockchains</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">$100M</span>
-                    <span class="stat-label">Insurance Coverage</span>
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Cross-Chain Networks</span>
                 </div>
             </div>
             <div class="hero-cta">
-                <button class="btn-primary-large">Join Waitlist →</button>
-                <button class="btn-demo">▶ Watch Demo</button>
+                <button class="btn-primary-large">Join Waitlist</button>
+                <button class="btn-demo">View Documentation</button>
             </div>
             
             <div class="waitlist-badge">
@@ -965,139 +1099,293 @@
         </div>
     </section>
 
-    <!-- Features Overview -->
-    <section class="features-overview" id="features">
+    <!-- Blockchain Infrastructure Section -->
+    <section class="blockchain-section" id="blockchain">
         <div class="container">
             <div class="section-header">
-                <h2 class="heading-large">Everything You Need for DeFi</h2>
+                <h2 class="heading-large">Proprietary Binary Tree Blockchain</h2>
                 <p class="section-subtitle">
-                    Professional tools, institutional security, and luxury experience
-                    in one comprehensive platform
+                    Custom blockchain architecture with DPoS consensus, enabling faster transactions and energy-efficient operations
                 </p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card premium">
-                    <div class="feature-icon">AI</div>
-                    <h3>AI Trading Bots</h3>
-                    <p>10 advanced trading strategies with machine learning optimization</p>
-                    <div class="feature-stats">
-                        <span>85% Success Rate</span>
-                        <span>24/7 Automation</span>
+            <div class="blockchain-content">
+                <div>
+                    <div class="blockchain-features">
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">BINARY TREE</div>
+                            <div class="blockchain-info">
+                                <h4>Unique Architecture</h4>
+                                <p>Binary tree structure allows parallel block creation, significantly faster than traditional linear blockchains</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">DPoS</div>
+                            <div class="blockchain-info">
+                                <h4>Delegated Proof of Stake</h4>
+                                <p>Energy-efficient consensus mechanism with validator delegation and democratic governance</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">P2P</div>
+                            <div class="blockchain-info">
+                                <h4>WebSocket P2P Network</h4>
+                                <p>Real-time peer-to-peer networking with seed node discovery and synchronization</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">ZWO</div>
+                            <div class="blockchain-info">
+                                <h4>Native Token</h4>
+                                <p>ZWO powers transactions, staking rewards, and governance with deflationary tokenomics</p>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">WALLET</div>
-                    <h3>Universal Wallet</h3>
-                    <p>50+ cryptocurrencies across 15 blockchains in one secure wallet</p>
-                    <div class="feature-stats">
-                        <span>Bank-Grade Security</span>
-                        <span>Hardware Integration</span>
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Multi-Currency HD Wallet</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 2rem;">
+                        BIP39/32/44 compliant hierarchical deterministic wallet supporting major cryptocurrencies with real address generation and transaction signing.
+                    </p>
+                    <div class="supported-coins">
+                        <span class="coin-tag">Bitcoin (BTC)</span>
+                        <span class="coin-tag">Ethereum (ETH)</span>
+                        <span class="coin-tag">Litecoin (LTC)</span>
+                        <span class="coin-tag">Solana (SOL)</span>
+                        <span class="coin-tag">Cardano (ADA)</span>
+                        <span class="coin-tag">Polkadot (DOT)</span>
+                        <span class="coin-tag">Avalanche (AVAX)</span>
+                        <span class="coin-tag">Polygon (MATIC)</span>
+                        <span class="coin-tag">Chainlink (LINK)</span>
+                        <span class="coin-tag">Uniswap (UNI)</span>
+                        <span class="coin-tag">Bitcoin Cash (BCH)</span>
+                        <span class="coin-tag">Dogecoin (DOGE)</span>
+                        <span class="coin-tag">ZWO Token</span>
                     </div>
-                    <a href="#" class="feature-link">Learn More →</a>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">STAKE</div>
-                    <h3>Staking & Yield</h3>
-                    <p>Auto-compounding staking with up to 15% APY across protocols</p>
-                    <div class="feature-stats">
-                        <span>15% Max APY</span>
-                        <span>Auto-Compound</span>
-                    </div>
-                    <a href="#" class="feature-link">Learn More →</a>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">BRIDGE</div>
-                    <h3>Cross-Chain Bridge</h3>
-                    <p>Seamless asset transfers across 15+ blockchains in minutes</p>
-                    <div class="feature-stats">
-                        <span>2-5 Min Transfers</span>
-                        <span>Minimal Fees</span>
-                    </div>
-                    <a href="#" class="feature-link">Learn More →</a>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">NFT</div>
-                    <h3>NFT Marketplace</h3>
-                    <p>Create, trade, and manage NFT collections with AI generation</p>
-                    <div class="feature-stats">
-                        <span>AI Generation</span>
-                        <span>Zero Gas Minting</span>
-                    </div>
-                    <a href="#" class="feature-link">Learn More →</a>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">LAUNCH</div>
-                    <h3>Token Launchpad</h3>
-                    <p>Launch tokens and NFT projects with built-in fundraising tools</p>
-                    <div class="feature-stats">
-                        <span>$50M+ Raised</span>
-                        <span>124 Projects</span>
-                    </div>
-                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trading Bots Showcase -->
-    <section class="trading-bots-showcase" id="trading-bots">
+    <!-- Features Overview -->
+    <section class="features-overview" id="features">
         <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Complete Financial Platform</h2>
+                <p class="section-subtitle">
+                    Professional-grade tools for cryptocurrency, DeFi, NFTs, real-world assets, and traditional stock trading
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card premium">
+                    <div class="feature-icon">DEFI</div>
+                    <h3>DeFi Staking & Yield</h3>
+                    <p>Flexible staking periods with auto-compounding rewards, yield farming, and revenue sharing from platform fees</p>
+                    <div class="feature-stats">
+                        <span>7-180 Day Periods</span>
+                        <span>Auto-Compound</span>
+                        <span>Real Yield</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">BRIDGE</div>
+                    <h3>Cross-Chain Bridges</h3>
+                    <p>Seamless asset transfers across 15+ networks using Wormhole, LayerZero, and proprietary bridge technology</p>
+                    <div class="feature-stats">
+                        <span>Multi-Protocol</span>
+                        <span>Low Fees</span>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">NFT</div>
+                    <h3>NFT Marketplace</h3>
+                    <p>Create, trade, and manage NFT collections with on-chain storage and integrated real-world asset support</p>
+                    <div class="feature-stats">
+                        <span>On-Chain Storage</span>
+                        <span>RWA Support</span>
+                        <span>Royalties</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">STOCK</div>
+                    <h3>Stock Trading</h3>
+                    <p>Real stock trading via Alpaca API with paper trading mode for risk-free strategy testing</p>
+                    <div class="feature-stats">
+                        <span>Commission-Free</span>
+                        <span>Paper Trading</span>
+                        <span>US Markets</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">LAUNCH</div>
+                    <h3>Token Launchpad</h3>
+                    <p>Launch ERC-20 and BEP-20 tokens with built-in liquidity pools, vesting, and fair launch mechanisms</p>
+                    <div class="feature-stats">
+                        <span>Multi-Chain</span>
+                        <span>Vesting</span>
+                        <span>Liquidity Lock</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">DAO</div>
+                    <h3>DAO Governance</h3>
+                    <p>On-chain governance with proposal creation, token-weighted voting, and treasury management</p>
+                    <div class="feature-stats">
+                        <span>Proposals</span>
+                        <span>Voting</span>
+                        <span>Treasury</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Trading Section -->
+    <section class="trading-bots-showcase" id="trading">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">AI-Powered Trading Intelligence</h2>
+                <p class="section-subtitle">
+                    Advanced trading automation with machine learning, neural networks, and quantum-inspired optimization
+                </p>
+            </div>
             <div class="showcase-content">
                 <div class="showcase-text">
-                    <h2 class="heading-large">AI That Never Sleeps</h2>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Automated Trading Strategies</h3>
                     <p class="showcase-subtitle">
-                        Revolutionary trading automation with 10 distinct strategies
-                        powered by machine learning and real-time market analysis
+                        Five distinct trading bot strategies powered by advanced algorithms and real-time market analysis
                     </p>
                     <div class="bot-strategies">
-                        <div class="strategy">
-                            <div class="strategy-icon">GRID</div>
-                            <div class="strategy-info">
-                                <h4>Grid Trading</h4>
-                                <p>Automated buy/sell orders in price ranges</p>
-                                <span class="strategy-performance">+12.5% Monthly</span>
-                            </div>
-                        </div>
                         <div class="strategy">
                             <div class="strategy-icon">MOMENTUM</div>
                             <div class="strategy-info">
                                 <h4>Momentum Trading</h4>
-                                <p>AI-driven trend following with risk management</p>
-                                <span class="strategy-performance">+25.8% Monthly</span>
+                                <p>Identifies and follows market trends with risk management</p>
                             </div>
                         </div>
                         <div class="strategy">
-                            <div class="strategy-icon">AI</div>
+                            <div class="strategy-icon">REVERSION</div>
                             <div class="strategy-info">
-                                <h4>AI Predictive</h4>
-                                <p>Neural network price prediction with 85% accuracy</p>
-                                <span class="strategy-performance">+45.2% Monthly</span>
+                                <h4>Mean Reversion</h4>
+                                <p>Statistical analysis to identify overbought/oversold conditions</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">ARBITRAGE</div>
+                            <div class="strategy-info">
+                                <h4>Arbitrage</h4>
+                                <p>Cross-exchange price discrepancy exploitation</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">GRID</div>
+                            <div class="strategy-info">
+                                <h4>Grid Trading</h4>
+                                <p>Automated buy low, sell high in range-bound markets</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">DCA</div>
+                            <div class="strategy-info">
+                                <h4>Dollar Cost Averaging</h4>
+                                <p>Regular purchases to reduce timing risk</p>
                             </div>
                         </div>
                     </div>
-                    <div class="subscription-tiers">
-                        <div class="tier">
-                            <span class="tier-name">Basic</span>
-                            <span class="tier-price">Free</span>
-                            <span class="tier-bots">2 Bots</span>
-                        </div>
-                        <div class="tier popular">
-                            <span class="tier-name">Premium</span>
-                            <span class="tier-price">$29.99/mo</span>
-                            <span class="tier-bots">10 Bots</span>
-                        </div>
-                        <div class="tier">
-                            <span class="tier-name">Pro</span>
-                            <span class="tier-price">$99.99/mo</span>
-                            <span class="tier-bots">50 Bots</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="showcase-visual">
-                    <div class="bot-dashboard">
-                        Interactive Bot Dashboard Demo
+                <div>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Advanced AI Features</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 2rem;">
+                        Cutting-edge machine learning and artificial intelligence for market intelligence
+                    </p>
+                    <div class="ai-features">
+                        <div class="ai-feature-tag">
+                            <strong>Predictive Analytics</strong>
+                            <span>Price forecasting models</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Social Sentiment</strong>
+                            <span>Twitter/Reddit analysis</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Neural Networks</strong>
+                            <span>Deep learning models</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Market Intelligence</strong>
+                            <span>News aggregation AI</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Risk Management</strong>
+                            <span>AI-powered position sizing</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Quantum Optimizer</strong>
+                            <span>Portfolio optimization</span>
+                        </div>
                     </div>
+                    <p style="color: var(--platinum-silver); margin-top: 2rem; font-size: 0.95rem;">
+                        Includes AI chat assistant for natural language trading commands, market analysis, and educational content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real World Assets Section -->
+    <section class="rwa-section" id="rwa">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Real World Asset Tokenization</h2>
+                <p class="section-subtitle">
+                    Bridge physical assets to blockchain with NFT-based ownership, verification, and fractional investment
+                </p>
+            </div>
+            <div class="rwa-grid">
+                <div class="rwa-card">
+                    <div class="rwa-icon">REAL ESTATE</div>
+                    <h3>Property NFTs</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Tokenize real estate with on-chain ownership verification
+                    </p>
+                    <ul>
+                        <li>Residential properties</li>
+                        <li>Commercial buildings</li>
+                        <li>Land parcels</li>
+                        <li>REIT tokenization</li>
+                        <li>Fractional ownership</li>
+                        <li>Legal document integration</li>
+                    </ul>
+                </div>
+                <div class="rwa-card">
+                    <div class="rwa-icon">PHYSICAL</div>
+                    <h3>Physical Item NFTs</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Link physical items to blockchain for authenticity
+                    </p>
+                    <ul>
+                        <li>Luxury goods (watches, jewelry)</li>
+                        <li>Collectibles (art, antiques)</li>
+                        <li>Vehicles (cars, boats)</li>
+                        <li>Electronics</li>
+                        <li>Provenance tracking</li>
+                        <li>Insurance integration</li>
+                    </ul>
+                </div>
+                <div class="rwa-card">
+                    <div class="rwa-icon">MARKETPLACE</div>
+                    <h3>RWA Marketplace</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Trade tokenized real-world assets securely
+                    </p>
+                    <ul>
+                        <li>Secondary market trading</li>
+                        <li>Fractional shares</li>
+                        <li>Yield distribution</li>
+                        <li>Ownership transfer</li>
+                        <li>Verification system</li>
+                        <li>Price discovery</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1107,31 +1395,95 @@
     <section class="security-section" id="security">
         <div class="container">
             <div class="section-header">
-                <h2 class="heading-large">Security First</h2>
+                <h2 class="heading-large">Enterprise-Grade Security</h2>
                 <p class="section-subtitle">
-                    Bank-grade security with transparent audits and insurance coverage
+                    Multi-layered security infrastructure protecting your assets and data
                 </p>
             </div>
             <div class="security-features">
                 <div class="security-feature">
-                    <div class="feature-icon">BOUNTY</div>
-                    <h3>$5M Bug Bounty</h3>
-                    <p>Largest bug bounty program in DeFi</p>
+                    <div class="feature-icon">ENCRYPTION</div>
+                    <h3>Secure Keychain</h3>
+                    <p>Military-grade encryption with iOS Secure Enclave integration</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">BIOMETRIC</div>
+                    <h3>Biometric Auth</h3>
+                    <p>Face ID and Touch ID for secure access</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">SSL</div>
+                    <h3>SSL Pinning</h3>
+                    <p>Certificate pinning prevents man-in-the-middle attacks</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">DETECT</div>
+                    <h3>Threat Detection</h3>
+                    <p>Jailbreak, root, and debugger detection</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">FRAUD</div>
+                    <h3>Fraud Prevention</h3>
+                    <p>Real-time transaction monitoring and fraud detection</p>
                 </div>
                 <div class="security-feature">
                     <div class="feature-icon">AUDIT</div>
-                    <h3>Continuous Audits</h3>
-                    <p>Quarterly audits by top security firms</p>
+                    <h3>Audit Trails</h3>
+                    <p>Complete logging for compliance and security</p>
                 </div>
-                <div class="security-feature">
-                    <div class="feature-icon">INSURE</div>
-                    <h3>$100M Insurance</h3>
-                    <p>Comprehensive coverage for user funds</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="integration-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Seamless Integrations</h2>
+                <p class="section-subtitle">
+                    Connected to the best services in cryptocurrency, payments, and trading
+                </p>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <strong>CoinGecko</strong>
+                    <span>Real-time prices</span>
                 </div>
-                <div class="security-feature">
-                    <div class="feature-icon">SECURE</div>
-                    <h3>Multi-Signature</h3>
-                    <p>Hardware security modules and cold storage</p>
+                <div class="integration-card">
+                    <strong>Alpaca</strong>
+                    <span>Stock trading API</span>
+                </div>
+                <div class="integration-card">
+                    <strong>MoonPay</strong>
+                    <span>Fiat on-ramp</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Transak</strong>
+                    <span>Alternative on-ramp</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Stripe</strong>
+                    <span>Payment processing</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Wormhole</strong>
+                    <span>Cross-chain bridge</span>
+                </div>
+                <div class="integration-card">
+                    <strong>LayerZero</strong>
+                    <span>Omnichain protocol</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Bitcoin Network</strong>
+                    <span>Direct integration</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Ethereum Network</strong>
+                    <span>Web3 support</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Apple Pay</strong>
+                    <span>Mobile payments</span>
                 </div>
             </div>
         </div>
@@ -1140,29 +1492,37 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="heading-large">Be First to Experience the Future</h2>
+            <h2 class="heading-large">Join the Future of Finance</h2>
             <p class="cta-subtitle">
-                Join the waitlist and get early access when we launch. First 1,000 users get lifetime Premium features.
+                Be among the first to experience the complete blockchain financial ecosystem. Early access members receive lifetime benefits.
             </p>
             
             <div class="waitlist-form">
                 <input type="email" placeholder="Enter your email" class="email-input" id="waitlist-email">
-                <button class="btn-primary-large" id="join-waitlist-btn">Join Waitlist →</button>
+                <button class="btn-primary-large" id="join-waitlist-btn">Join Waitlist</button>
             </div>
-            <p class="waitlist-note">Early access + Lifetime Premium for first 1,000 users</p>
+            <p class="waitlist-note">First 1,000 users receive lifetime premium features</p>
             
             <div class="cta-features">
                 <div class="feature">
-                    <span>SECURE</span>
-                    <span>Bank-Grade Security</span>
+                    <span>COMPLETE</span>
+                    <span>All-in-One Platform</span>
+                </div>
+                <div class="feature">
+                    <span>BLOCKCHAIN</span>
+                    <span>Proprietary Technology</span>
                 </div>
                 <div class="feature">
                     <span>AI</span>
-                    <span>24/7 AI Trading</span>
+                    <span>Trading Automation</span>
                 </div>
                 <div class="feature">
-                    <span>PRO</span>
-                    <span>Professional Tools</span>
+                    <span>RWA</span>
+                    <span>Real Asset Bridge</span>
+                </div>
+                <div class="feature">
+                    <span>SECURE</span>
+                    <span>Enterprise Security</span>
                 </div>
             </div>
         </div>
@@ -1175,44 +1535,44 @@
                 <div class="footer-section">
                     <div class="footer-logo">ZIWIO</div>
                     <p class="footer-description">
-                        The most comprehensive DeFi platform with AI-powered trading,
-                        institutional custody, and luxury user experience.
+                        The world's first complete blockchain financial ecosystem combining wallet, trading, DeFi, NFTs, real-world assets, and governance.
                     </p>
                     <div class="social-links">
                         <a href="#" aria-label="Twitter">X</a>
                         <a href="#" aria-label="Discord">D</a>
                         <a href="#" aria-label="Telegram">T</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">G</a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Features</h3>
+                    <h3>Platform</h3>
                     <ul>
-                        <li><a href="#">AI Trading Bots</a></li>
-                        <li><a href="#">Staking & Yield</a></li>
+                        <li><a href="#">Blockchain</a></li>
+                        <li><a href="#">Wallet</a></li>
+                        <li><a href="#">AI Trading</a></li>
+                        <li><a href="#">DeFi Staking</a></li>
                         <li><a href="#">NFT Marketplace</a></li>
-                        <li><a href="#">Cross-Chain Bridge</a></li>
-                        <li><a href="#">Token Launchpad</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press Kit</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Stock Trading</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Developers</h3>
                     <ul>
                         <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Developer Grants</a></li>
-                        <li><a href="#">Hackathons</a></li>
+                        <li><a href="#">API Reference</a></li>
                         <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Status Page</a></li>
+                        <li><a href="#">SDK</a></li>
+                        <li><a href="#">Smart Contracts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1222,12 +1582,12 @@
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="#">Compliance</a></li>
                         <li><a href="#">Security</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Audits</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Ziwio Technologies. All rights reserved.</p>
+                <p>&copy; 2024 Ziwio Technologies. All rights reserved. Blockchain Financial Ecosystem.</p>
             </div>
         </div>
     </footer>
@@ -1239,16 +1599,17 @@
             
             <div class="modal-header">
                 <h3>Join the Waitlist</h3>
-                <p>Be among the first to experience the future of DeFi</p>
+                <p>Early access to the complete blockchain financial ecosystem</p>
             </div>
             
             <div class="perks-list">
-                <h4>Early Access Perks</h4>
+                <h4>Early Access Benefits</h4>
                 <ul>
-                    <li>Lifetime Premium subscription (worth $360/year)</li>
+                    <li>Lifetime premium subscription</li>
                     <li>Priority customer support</li>
-                    <li>Exclusive launch day bonuses</li>
+                    <li>Exclusive launch bonuses</li>
                     <li>Beta testing access</li>
+                    <li>Reduced trading fees</li>
                 </ul>
             </div>
             
@@ -1267,30 +1628,33 @@
                     <label for="interest">Primary Interest *</label>
                     <select id="interest" name="interest" required>
                         <option value="">Select your interest...</option>
+                        <option value="wallet">Multi-Currency Wallet</option>
                         <option value="trading">AI Trading Bots</option>
-                        <option value="staking">Staking & Yield</option>
+                        <option value="defi">DeFi Staking</option>
                         <option value="nft">NFT Marketplace</option>
-                        <option value="institutional">Institutional Services</option>
-                        <option value="developer">Developer Tools</option>
+                        <option value="rwa">Real World Assets</option>
+                        <option value="stock">Stock Trading</option>
+                        <option value="blockchain">Blockchain Technology</option>
                         <option value="all">All Features</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="experience">DeFi Experience</label>
+                    <label for="experience">Crypto Experience</label>
                     <select id="experience" name="experience">
                         <option value="">Select experience level...</option>
-                        <option value="beginner">Beginner (New to DeFi)</option>
-                        <option value="intermediate">Intermediate (Some experience)</option>
-                        <option value="advanced">Advanced (Active trader)</option>
-                        <option value="professional">Professional/Institutional</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced Trader</option>
+                        <option value="developer">Developer</option>
+                        <option value="institutional">Institutional</option>
                     </select>
                 </div>
                 
                 <div class="checkbox-group">
                     <input type="checkbox" id="newsletter" name="newsletter" checked>
                     <label for="newsletter">
-                        Send me updates about Ziwio, new features, and exclusive offers
+                        Send me updates about Ziwio and new features
                     </label>
                 </div>
                 
@@ -1301,7 +1665,7 @@
                     </label>
                 </div>
                 
-                <button type="submit" class="submit-btn">Join Waitlist →</button>
+                <button type="submit" class="submit-btn">Join Waitlist</button>
             </form>
         </div>
     </div>
@@ -1336,7 +1700,6 @@
         });
 
         // Navigation scroll effect
-        let lastScroll = 0;
         const nav = document.querySelector('.main-navigation');
         
         window.addEventListener('scroll', () => {
@@ -1348,7 +1711,6 @@
                 nav.style.background = 'rgba(20, 20, 22, 0.95)';
                 nav.style.boxShadow = 'none';
             }
-            lastScroll = currentScroll;
         });
 
         // Modal functionality
@@ -1371,12 +1733,6 @@
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 openWaitlistModal();
-            });
-        });
-
-        document.querySelectorAll('.btn-secondary').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Login will be available at launch. Join the waitlist to be notified!');
             });
         });
 
@@ -1409,14 +1765,14 @@
                 closeWaitlistModal();
                 waitlistForm.reset();
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Join Waitlist →';
+                submitBtn.textContent = 'Join Waitlist';
                 
                 showSuccessMessage(formData.fullName);
             } catch (error) {
                 console.error('Error adding to waitlist:', error);
                 alert('Something went wrong. Please try again.');
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Join Waitlist →';
+                submitBtn.textContent = 'Join Waitlist';
             }
         });
         
@@ -1444,37 +1800,6 @@
                 setTimeout(() => message.remove(), 500);
             }, 4000);
         }
-
-        // Demo video
-        document.querySelectorAll('.btn-demo').forEach(button => {
-            button.addEventListener('click', () => {
-                const message = document.createElement('div');
-                message.style.cssText = `
-                    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                    background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
-                    color: #141416; padding: 2rem 3rem; border-radius: 1rem;
-                    font-size: 1.1rem; z-index: 10000;
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); text-align: center;
-                    max-width: 500px; line-height: 1.6;
-                `;
-                message.innerHTML = `
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎬</div>
-                    <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">
-                        Watch Sarah's Journey
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        See how Sarah transformed her crypto trading with Ziwio's AI-powered platform
-                    </div>
-                    <button onclick="this.parentElement.remove(); document.getElementById('waitlistModal').classList.add('active')" 
-                            style="padding: 1rem 2rem; background: #141416; color: #F5DEB3; border: none; 
-                                   border-radius: 0.5rem; cursor: pointer; font-weight: 600; font-size: 1rem;">
-                        Skip to Waitlist →
-                    </button>
-                `;
-                document.body.appendChild(message);
-                setTimeout(() => message.remove(), 5000);
-            });
-        });
 
         // Waitlist counter animation
         const waitlistCount = document.querySelector('.waitlist-count');
