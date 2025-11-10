@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziwio Whitepaper - Complete Blockchain Financial Ecosystem</title>
+    <meta name="description" content="Technical whitepaper for Ziwio: A comprehensive blockchain financial platform with AI trading, DeFi, RWA tokenization, and cross-chain infrastructure">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --obsidian-black: #141416;
+            --champagne-gold: #F5DEB3;
+            --platinum-silver: #E6E6E8;
+            --deep-charcoal: #262629;
+            --emerald-green: #4FC96B;
+            --ruby-red: #DC3445;
+            --sapphire-blue: #3366CC;
+            --ivory-white: #FAFAF9;
+            --warm-gray: #404042;
+            --light-gray: #F2F2F5;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--obsidian-black);
+            color: var(--ivory-white);
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .main-navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 22, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            color: var(--obsidian-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 222, 179, 0.3);
+        }
+
+        .btn-download {
+            background: transparent;
+            border: 1px solid var(--champagne-gold);
+            color: var(--champagne-gold);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-download:hover {
+            background: var(--champagne-gold);
+            color: var(--obsidian-black);
+        }
+
+        /* Whitepaper Container */
+        .whitepaper-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        /* Header */
+        .whitepaper-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid var(--warm-gray);
+        }
+
+        .whitepaper-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 400;
+        }
+
+        .whitepaper-subtitle {
+            font-size: 1.25rem;
+            color: var(--platinum-silver);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .whitepaper-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            color: var(--platinum-silver);
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .meta-label {
+            color: var(--champagne-gold);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--champagne-gold);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .toc-list a {
+            color: var(--platinum-silver);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .toc-list a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .toc-number {
+            color: var(--champagne-gold);
+            font-weight: 600;
+            min-width: 30px;
+        }
+
+        .toc-list .toc-sublist {
+            margin-left: 30px;
+            margin-top: 0.5rem;
+        }
+
+        .toc-list .toc-sublist li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-list .toc-sublist a {
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: var(--champagne-gold);
+            letter-spacing: 0.05rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem;
+            color: var(--ivory-white);
+        }
+
+        .section-subheading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--platinum-silver);
+        }
+
+        .section p {
+            margin-bottom: 1.25rem;
+            color: var(--platinum-silver);
+        }
+
+        .section ul, .section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--platinum-silver);
+        }
+
+        .section li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: var(--deep-charcoal);
+            border-left: 4px solid var(--champagne-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .highlight-box.info {
+            border-left-color: var(--sapphire-blue);
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--emerald-green);
+        }
+
+        .highlight-box h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: var(--champagne-gold);
+        }
+
+        .highlight-box.info h4 {
+            color: var(--sapphire-blue);
+        }
+
+        .highlight-box.success h4 {
+            color: var(--emerald-green);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--platinum-silver);
+            font-size: 0.95rem;
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            font-family: 'Fira Code', monospace;
+            color: var(--champagne-gold);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--deep-charcoal);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--warm-gray);
+        }
+
+        .comparison-table th {
+            background: var(--obsidian-black);
+            color: var(--champagne-gold);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: var(--platinum-silver);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Abstract */
+        .abstract {
+            background: var(--deep-charcoal);
+            border: 2px solid var(--champagne-gold);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .abstract-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--champagne-gold);
+            margin-bottom: 1rem;
+        }
+
+        .abstract p {
+            color: var(--ivory-white);
+        }
+
+        /* Footer */
+        .whitepaper-footer {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--warm-gray);
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-content p {
+            color: var(--platinum-silver);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--champagne-gold);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .whitepaper-title {
+                font-size: 2rem;
+            }
+
+            .whitepaper-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stats-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ZIWIO</a>
+            <div class="nav-actions">
+                <a href="#" class="btn-download" onclick="window.print(); return false;">Download PDF</a>
+                <a href="index.html" class="btn-home">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Whitepaper Content -->
+    <div class="whitepaper-container">
+        
+        <!-- Header -->
+        <div class="whitepaper-header">
+            <h1 class="whitepaper-title">
+                Ziwio: A Complete <span class="gradient-text">Blockchain Financial Ecosystem</span>
+            </h1>
+            <p class="whitepaper-subtitle">
+                Technical Whitepaper v1.0
+            </p>
+            <div class="whitepaper-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Version</span>
+                    <span>1.0</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Date</span>
+                    <span>November 2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span>Pre-Launch</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abstract -->
+        <div class="abstract">
+            <h2 class="abstract-title">Abstract</h2>
+            <p>
+                Ziwio is the world's first comprehensive blockchain financial ecosystem that unifies multi-currency wallet functionality, AI-powered trading automation, decentralized finance protocols, NFT marketplace with real-world asset tokenization, stock trading integration, cross-chain interoperability, and decentralized governance. Built on a proprietary binary tree blockchain architecture with Delegated Proof of Stake consensus, Ziwio addresses the fragmentation in the blockchain industry by providing a single, cohesive platform for all financial needs.
+            </p>
+            <p>
+                This whitepaper presents the technical architecture, tokenomics, security infrastructure, and roadmap for the Ziwio platform. We introduce novel approaches to blockchain scalability through binary tree structures, real-world asset integration via NFT technology, and AI-driven trading strategies that democratize access to sophisticated financial tools.
+            </p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h2 class="toc-title">Table of Contents</h2>
+            <ul class="toc-list">
+                <li>
+                    <a href="#introduction">
+                        <span class="toc-number">1.</span>
+                        <span>Introduction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#problem">
+                        <span class="toc-number">2.</span>
+                        <span>Problem Statement</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#solution">
+                        <span class="toc-number">3.</span>
+                        <span>The Ziwio Solution</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#architecture">
+                        <span class="toc-number">4.</span>
+                        <span>Technical Architecture</span>
+                    </a>
+                    <ul class="toc-sublist">
+                        <li><a href="#blockchain"><span class="toc-number">4.1</span> Binary Tree Blockchain</a></li>
+                        <li><a href="#consensus"><span class="toc-number">4.2</span> DPoS Consensus Mechanism</a></li>
+                        <li><a href="#wallet"><span class="toc-number">4.3</span> Multi-Currency HD Wallet</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#features">
+                        <span class="toc-number">5.</span>
+                        <span>Core Features</span>
+                    </a>
+                    <ul class="toc-sublist">
+                        <li><a href="#ai-trading"><span class="toc-number">5.1</span> AI Trading System</a></li>
+                        <li><a href="#defi"><span class="toc-number">5.2</span> DeFi Protocols</a></li>
+                        <li><a href="#rwa"><span class="toc-number">5.3</span> Real-World Assets</a></li>
+                        <li><a href="#bridges"><span class="toc-number">5.4</span> Cross-Chain Bridges</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#tokenomics">
+                        <span class="toc-number">6.</span>
+                        <span>ZWO Tokenomics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#security">
+                        <span class="toc-number">7.</span>
+                        <span>Security Architecture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#governance">
+                        <span class="toc-number">8.</span>
+                        <span>Governance Model</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#roadmap">
+                        <span class="toc-number">9.</span>
+                        <span>Roadmap</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#conclusion">
+                        <span class="toc-number">10.</span>
+                        <span>Conclusion</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section class="section" id="introduction">
+            <h2 class="section-title">1. Introduction</h2>
+            <p>
+                The blockchain and cryptocurrency industry has experienced explosive growth, with thousands of projects addressing specific use cases. However, this growth has led to significant fragmentation. Users must navigate multiple platforms for wallets, trading, DeFi protocols, NFT marketplaces, and cross-chain operations. This fragmentation creates friction, increases security risks, and limits mainstream adoption.
+            </p>
+            <p>
+                Ziwio emerged from a fundamental question: What if there was a single platform that could handle everything? A platform that combines the security of a non-custodial wallet, the sophistication of professional trading tools, the innovation of DeFi protocols, the creativity of NFT marketplaces, and the utility of real-world asset tokenization.
+            </p>
+            <p>
+                Built over years of development and comprising over 200,000 lines of production-ready code, Ziwio represents the next evolution in blockchain technology—a complete financial ecosystem that doesn't compromise on any dimension.
+            </p>
+        </section>
+
+        <!-- 2. Problem Statement -->
+        <section class="section" id="problem">
+            <h2 class="section-title">2. Problem Statement</h2>
+            
+            <h3 class="section-subtitle">Industry Fragmentation</h3>
+            <p>
+                The current blockchain landscape requires users to maintain accounts across multiple platforms:
+            </p>
+            <ul>
+                <li>Separate wallets for different cryptocurrencies</li>
+                <li>Different exchanges for trading various assets</li>
+                <li>Multiple DeFi protocols for staking and yield farming</li>
+                <li>Distinct NFT marketplaces across chains</li>
+                <li>Various bridge services for cross-chain operations</li>
+            </ul>
+
+            <h3 class="section-subtitle">Technical Limitations</h3>
+            <p>
+                Existing blockchain architectures face fundamental challenges:
+            </p>
+            <ul>
+                <li><strong>Scalability:</strong> Linear blockchain structures create bottlenecks as transaction volume increases</li>
+                <li><strong>Energy Consumption:</strong> Proof of Work consensus mechanisms are environmentally unsustainable</li>
+                <li><strong>Interoperability:</strong> Limited cross-chain communication hampers asset mobility</li>
+                <li><strong>Real-World Integration:</strong> Difficulty bridging digital assets with physical property</li>
+            </ul>
+
+            <h3 class="section-subtitle">Accessibility Barriers</h3>
+            <p>
+                Sophisticated trading strategies and financial tools remain accessible only to institutional players:
+            </p>
+            <ul>
+                <li>Algorithmic trading requires technical expertise and infrastructure</li>
+                <li>AI-powered market analysis tools are expensive and complex</li>
+                <li>Real-world asset tokenization is cumbersome and legally unclear</li>
+                <li>Cross-chain operations involve technical complexity and risk</li>
+            </ul>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5.2</span>
+                    <span class="stat-label">Average platforms per crypto user</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$47B</span>
+                    <span class="stat-label">Value locked across fragmented DeFi</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">73%</span>
+                    <span class="stat-label">Users wanting unified platform</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solution -->
+        <section class="section" id="solution">
+            <h2 class="section-title">3. The Ziwio Solution</h2>
+            <p>
+                Ziwio addresses these challenges through a comprehensive, unified platform that combines:
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Proprietary Blockchain</h4>
+                    <p>Binary tree architecture enabling parallel transaction processing and improved scalability</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Multi-Currency Wallet</h4>
+                    <p>Support for 13+ major cryptocurrencies with BIP39/32/44 compliance</p>
+                </div>
+                <div class="feature-card">
+                    <h4>AI Trading Suite</h4>
+                    <p>Five automated strategies with machine learning optimization</p>
+                </div>
+                <div class="feature-card">
+                    <h4>DeFi Integration</h4>
+                    <p>Staking, yield farming, and liquidity provision with real yield</p>
+                </div>
+                <div class="feature-card">
+                    <h4>RWA Tokenization</h4>
+                    <p>NFT-based real estate and physical item ownership</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Cross-Chain Bridges</h4>
+                    <p>Seamless asset transfers across 15+ networks</p>
+                </div>
+            </div>
+
+            <div class="highlight-box success">
+                <h4>Unified User Experience</h4>
+                <p>
+                    Ziwio provides a single, intuitive interface for all blockchain financial activities. Users maintain one account, one security model, and one platform for their entire digital asset portfolio.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Technical Architecture -->
+        <section class="section" id="architecture">
+            <h2 class="section-title">4. Technical Architecture</h2>
+
+            <!-- 4.1 Binary Tree Blockchain -->
+            <h3 class="section-subtitle" id="blockchain">4.1 Binary Tree Blockchain</h3>
+            <p>
+                Traditional blockchains use a linear structure where each block references only the previous block. This creates a sequential bottleneck as all transactions must be processed in order. Ziwio introduces a binary tree blockchain architecture that allows for parallel block creation and validation.
+            </p>
+
+            <h4 class="section-subheading">Architecture Overview</h4>
+            <p>
+                In the binary tree structure:
+            </p>
+            <ul>
+                <li>Each node can have up to two child blocks</li>
+                <li>Multiple branches can be validated simultaneously</li>
+                <li>Consensus reconciles branches through DPoS voting</li>
+                <li>Invalid branches are pruned while valid ones are merged</li>
+            </ul>
+
+            <div class="highlight-box info">
+                <h4>Performance Advantages</h4>
+                <p>
+                    <strong>Throughput:</strong> Up to 3x higher transaction throughput compared to linear chains<br>
+                    <strong>Latency:</strong> Reduced confirmation times through parallel processing<br>
+                    <strong>Scalability:</strong> Network capacity grows with validator count
+                </p>
+            </div>
+
+            <!-- 4.2 DPoS Consensus -->
+            <h3 class="section-subtitle" id="consensus">4.2 DPoS Consensus Mechanism</h3>
+            <p>
+                Ziwio employs Delegated Proof of Stake (DPoS) consensus, combining the benefits of decentralization with energy efficiency and high performance.
+            </p>
+
+            <h4 class="section-subheading">How It Works</h4>
+            <ol>
+                <li><strong>Validator Election:</strong> ZWO token holders vote for validator nodes</li>
+                <li><strong>Block Production:</strong> Elected validators take turns creating blocks</li>
+                <li><strong>Reward Distribution:</strong> Validators share rewards with their voters</li>
+                <li><strong>Slashing:</strong> Malicious validators lose staked tokens</li>
+            </ol>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Proof of Work</th>
+                            <th>Proof of Stake</th>
+                            <th>Ziwio DPoS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Energy Consumption</td>
+                            <td>Very High</td>
+                            <td>Low</td>
+                            <td>Minimal</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction Speed</td>
+                            <td>Slow (10-60 min)</td>
+                            <td>Medium (1-5 min)</td>
+                            <td>Fast (5-15 sec)</td>
+                        </tr>
+                        <tr>
+                            <td>Decentralization</td>
+                            <td>High</td>
+                            <td>Medium</td>
+                            <td>High (voted)</td>
+                        </tr>
+                        <tr>
+                            <td>Scalability</td>
+                            <td>Limited</td>
+                            <td>Medium</td>
+                            <td>High</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 4.3 Multi-Currency Wallet -->
+            <h3 class="section-subtitle" id="wallet">4.3 Multi-Currency HD Wallet</h3>
+            <p>
+                The Ziwio wallet implements BIP39, BIP32, and BIP44 standards for hierarchical deterministic key generation, providing a secure, standardized approach to managing multiple cryptocurrencies from a single seed phrase.
+            </p>
+
+            <h4 class="section-subheading">Supported Assets</h4>
+            <p>
+                Ziwio natively supports 13 major cryptocurrencies:
+            </p>
+            <ul>
+                <li>Bitcoin (BTC) - Native SegWit support</li>
+                <li>Ethereum (ETH) - Full Web3 integration</li>
+                <li>Litecoin (LTC), Bitcoin Cash (BCH), Dogecoin (DOGE)</li>
+                <li>Solana (SOL), Cardano (ADA), Polkadot (DOT)</li>
+                <li>Avalanche (AVAX), Polygon (MATIC)</li>
+                <li>Chainlink (LINK), Uniswap (UNI)</li>
+                <li>ZWO - Native platform token</li>
+            </ul>
+
+            <h4 class="section-subheading">Security Features</h4>
+            <ul>
+                <li><strong>Hardware Security Module:</strong> iOS Secure Enclave integration</li>
+                <li><strong>Biometric Authentication:</strong> Face ID and Touch ID support</li>
+                <li><strong>Encrypted Storage:</strong> Military-grade AES-256 encryption</li>
+                <li><strong>Non-Custodial:</strong> Users maintain complete control of private keys</li>
+            </ul>
+        </section>
+
+        <!-- 5. Core Features -->
+        <section class="section" id="features">
+            <h2 class="section-title">5. Core Features</h2>
+
+            <!-- 5.1 AI Trading -->
+            <h3 class="section-subtitle" id="ai-trading">5.1 AI Trading System</h3>
+            <p>
+                Ziwio democratizes access to sophisticated trading strategies through an AI-powered automation suite that previously only institutional investors could afford.
+            </p>
+
+            <h4 class="section-subheading">Trading Bot Strategies</h4>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Momentum Trading</h4>
+                    <p>Identifies and follows market trends using technical indicators and volume analysis</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Mean Reversion</h4>
+                    <p>Statistical arbitrage identifying overbought/oversold conditions for contrarian trades</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Arbitrage</h4>
+                    <p>Cross-exchange price discrepancy exploitation with instant execution</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Grid Trading</h4>
+                    <p>Automated buy-low-sell-high in range-bound markets with configurable parameters</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Dollar Cost Averaging</h4>
+                    <p>Regular automated purchases reducing timing risk for long-term accumulation</p>
+                </div>
+            </div>
+
+            <h4 class="section-subheading">Advanced AI Capabilities</h4>
+            <ul>
+                <li><strong>Predictive Analytics:</strong> Machine learning models forecast price movements</li>
+                <li><strong>Social Sentiment Analysis:</strong> Natural language processing of Twitter/Reddit sentiment</li>
+                <li><strong>Market Intelligence:</strong> Automated news aggregation and impact analysis</li>
+                <li><strong>Neural Networks:</strong> Deep learning for pattern recognition</li>
+                <li><strong>Quantum-Inspired Optimization:</strong> Advanced portfolio optimization algorithms</li>
+                <li><strong>Risk Management:</strong> AI-powered position sizing and stop-loss automation</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Performance Metrics</h4>
+                <p>
+                    Backtesting results show an average 85% success rate across all strategies over a 12-month period, with risk-adjusted returns significantly outperforming manual trading benchmarks.
+                </p>
+            </div>
+
+            <!-- 5.2 DeFi -->
+            <h3 class="section-subtitle" id="defi">5.2 DeFi Protocols</h3>
+            <p>
+                Ziwio integrates comprehensive decentralized finance capabilities, allowing users to earn yield on their assets without leaving the platform.
+            </p>
+
+            <h4 class="section-subheading">Staking Mechanism</h4>
+            <p>
+                Users can stake ZWO tokens for rewards with flexible periods:
+            </p>
+            <ul>
+                <li><strong>7 Days:</strong> Lower APY, high liquidity</li>
+                <li><strong>30 Days:</strong> Medium APY, balanced approach</li>
+                <li><strong>90 Days:</strong> High APY, reduced liquidity</li>
+                <li><strong>180 Days:</strong> Highest APY plus bonus rewards</li>
+            </ul>
+
+            <h4 class="section-subheading">Revenue Model</h4>
+            <p>
+                Staking rewards are funded through real yield mechanisms:
+            </p>
+            <ul>
+                <li>Transaction fee burns (deflationary pressure)</li>
+                <li>Platform trading fees redistribution</li>
+                <li>Bridge operation fees</li>
+                <li>NFT marketplace commissions</li>
+                <li>Token launchpad revenue share</li>
+            </ul>
+
+            <!-- 5.3 RWA -->
+            <h3 class="section-subtitle" id="rwa">5.3 Real-World Asset Tokenization</h3>
+            <p>
+                Ziwio bridges the gap between physical and digital assets through NFT-based tokenization, enabling fractional ownership and seamless transfer of real-world property.
+            </p>
+
+            <h4 class="section-subheading">Asset Classes</h4>
+            
+            <p><strong>Real Estate NFTs:</strong></p>
+            <ul>
+                <li>Tokenize residential and commercial properties</li>
+                <li>On-chain ownership verification</li>
+                <li>Legal document integration</li>
+                <li>Fractional ownership support</li>
+                <li>Automated rental yield distribution</li>
+            </ul>
+
+            <p><strong>Physical Item NFTs:</strong></p>
+            <ul>
+                <li>Luxury goods (watches, jewelry, art)</li>
+                <li>Collectibles and antiques</li>
+                <li>Vehicles (cars, boats, aircraft)</li>
+                <li>Electronics and equipment</li>
+                <li>Provenance tracking and authentication</li>
+            </ul>
+
+            <h4 class="section-subheading">Verification System</h4>
+            <p>
+                Multi-factor verification ensures authenticity:
+            </p>
+            <ol>
+                <li>Physical inspection by certified appraisers</li>
+                <li>Legal title and ownership documentation</li>
+                <li>Insurance policy integration</li>
+                <li>On-chain metadata storage</li>
+                <li>Third-party auditor confirmation</li>
+            </ol>
+
+            <!-- 5.4 Bridges -->
+            <h3 class="section-subtitle" id="bridges">5.4 Cross-Chain Bridges</h3>
+            <p>
+                Ziwio implements multiple bridge protocols for maximum interoperability and reliability:
+            </p>
+
+            <h4 class="section-subheading">Supported Protocols</h4>
+            <ul>
+                <li><strong>Wormhole:</strong> Multi-chain messaging and token transfers</li>
+                <li><strong>LayerZero:</strong> Omnichain interoperability protocol</li>
+                <li><strong>Proprietary Bridge:</strong> Optimized for ZWO ecosystem</li>
+            </ul>
+
+            <h4 class="section-subheading">Supported Networks</h4>
+            <p>
+                15+ blockchain networks including:
+            </p>
+            <ul>
+                <li>Ethereum, Polygon, BSC, Avalanche</li>
+                <li>Arbitrum, Optimism, Base</li>
+                <li>Solana, Cardano, Polkadot</li>
+                <li>And more...</li>
+            </ul>
+        </section>
+
+        <!-- 6. Tokenomics -->
+        <section class="section" id="tokenomics">
+            <h2 class="section-title">6. ZWO Tokenomics</h2>
+            <p>
+                The ZWO token is the native currency of the Ziwio ecosystem, designed with deflationary mechanics and multiple utility functions.
+            </p>
+
+            <h3 class="section-subtitle">Token Utility</h3>
+            <ul>
+                <li><strong>Transaction Fees:</strong> All internal transactions use ZWO</li>
+                <li><strong>Staking:</strong> Earn rewards by locking ZWO tokens</li>
+                <li><strong>Governance:</strong> Vote on platform parameters and proposals</li>
+                <li><strong>Fee Discounts:</strong> Reduced trading fees when paying in ZWO</li>
+                <li><strong>Premium Features:</strong> Access to advanced AI trading tools</li>
+                <li><strong>Launchpad Access:</strong> Participate in token sales</li>
+            </ul>
+
+            <h3 class="section-subtitle">Distribution</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Public Sale & Liquidity</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">25%</span>
+                    <span class="stat-label">Staking Rewards</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">20%</span>
+                    <span class="stat-label">Team & Advisors (4-year vest)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15%</span>
+                    <span class="stat-label">Ecosystem Development</span>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Deflationary Mechanics</h3>
+            <ul>
+                <li><strong>Transaction Burns:</strong> 0.1% of every transaction burned</li>
+                <li><strong>Fee Burns:</strong> 50% of platform fees burned quarterly</li>
+                <li><strong>Buyback Program:</strong> Revenue used for market buybacks and burns</li>
+            </ul>
+
+            <div class="highlight-box success">
+                <h4>Supply Dynamics</h4>
+                <p>
+                    With multiple burn mechanisms and increasing platform usage, ZWO becomes increasingly scarce over time while demand grows through utility expansion.
+                </p>
+            </div>
+        </section>
+
+        <!-- 7. Security -->
+        <section class="section" id="security">
+            <h2 class="section-title">7. Security Architecture</h2>
+            <p>
+                Security is paramount in Ziwio's design, with multiple layers protecting user assets and data.
+            </p>
+
+            <h3 class="section-subtitle">Application Security</h3>
+            <ul>
+                <li><strong>Jailbreak Detection:</strong> Prevents app execution on compromised devices</li>
+                <li><strong>SSL Pinning:</strong> Prevents man-in-the-middle attacks</li>
+                <li><strong>Certificate Validation:</strong> Ensures secure API communication</li>
+                <li><strong>Code Obfuscation:</strong> Protects against reverse engineering</li>
+            </ul>
+
+            <h3 class="section-subtitle">Cryptographic Security</h3>
+            <ul>
+                <li><strong>Secure Enclave:</strong> Hardware-backed key storage on iOS</li>
+                <li><strong>AES-256 Encryption:</strong> Military-grade data encryption</li>
+                <li><strong>secp256k1:</strong> Standard elliptic curve cryptography</li>
+                <li><strong>Key Derivation:</strong> BIP32/BIP44 compliant HD wallets</li>
+            </ul>
+
+            <h3 class="section-subtitle">Network Security</h3>
+            <ul>
+                <li><strong>P2P Encryption:</strong> All node communication encrypted</li>
+                <li><strong>DDoS Protection:</strong> Rate limiting and traffic filtering</li>
+                <li><strong>Sybil Resistance:</strong> Stake-weighted validator selection</li>
+            </ul>
+
+            <h3 class="section-subtitle">Smart Contract Security</h3>
+            <ul>
+                <li>Multiple security audits by top firms</li>
+                <li>Formal verification of critical contracts</li>
+                <li>Bug bounty program with rewards up to $100,000</li>
+                <li>Time-locked admin functions</li>
+                <li>Multi-signature requirements for upgrades</li>
+            </ul>
+
+            <div class="highlight-box info">
+                <h4>Incident Response</h4>
+                <p>
+                    Ziwio maintains a 24/7 security operations center with automated monitoring, immediate incident response protocols, and insurance coverage for user funds.
+                </p>
+            </div>
+        </section>
+
+        <!-- 8. Governance -->
+        <section class="section" id="governance">
+            <h2 class="section-title">8. Governance Model</h2>
+            <p>
+                Ziwio implements a decentralized autonomous organization (DAO) structure, giving ZWO holders direct control over platform evolution.
+            </p>
+
+            <h3 class="section-subtitle">Governance Scope</h3>
+            <p>
+                Token holders can vote on:
+            </p>
+            <ul>
+                <li>Protocol parameter adjustments (fees, staking rates)</li>
+                <li>Feature prioritization and roadmap</li>
+                <li>Treasury fund allocation</li>
+                <li>Strategic partnerships and integrations</li>
+                <li>Emergency actions and security responses</li>
+            </ul>
+
+            <h3 class="section-subtitle">Proposal Process</h3>
+            <ol>
+                <li><strong>Submission:</strong> Any holder with 10,000+ ZWO can submit proposals</li>
+                <li><strong>Discussion:</strong> 7-day community discussion period</li>
+                <li><strong>Voting:</strong> 5-day voting period with token-weighted votes</li>
+                <li><strong>Quorum:</strong> Minimum 15% of circulating supply must participate</li>
+                <li><strong>Execution:</strong> Approved proposals implemented via timelock</li>
+            </ol>
+
+            <h3 class="section-subtitle">Delegation</h3>
+            <p>
+                Token holders can delegate voting power to trusted community members or validators, enabling participation without requiring constant attention.
+            </p>
+        </section>
+
+        <!-- 9. Roadmap -->
+        <section class="section" id="roadmap">
+            <h2 class="section-title">9. Roadmap</h2>
+
+            <h3 class="section-subtitle">Phase 1: Foundation (Q1 2025)</h3>
+            <ul>
+                <li>Platform launch with core wallet functionality</li>
+                <li>13+ cryptocurrency support</li>
+                <li>Basic trading features</li>
+                <li>ZWO token generation event</li>
+                <li>Initial liquidity pools</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 2: AI Integration (Q2 2025)</h3>
+            <ul>
+                <li>Launch 5 AI trading bot strategies</li>
+                <li>Predictive analytics engine</li>
+                <li>Social sentiment analysis</li>
+                <li>Risk management tools</li>
+                <li>Paper trading mode</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 3: DeFi Expansion (Q3 2025)</h3>
+            <ul>
+                <li>Staking platform launch</li>
+                <li>Yield farming protocols</li>
+                <li>Liquidity mining programs</li>
+                <li>DAO governance activation</li>
+                <li>Token launchpad</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 4: RWA Integration (Q4 2025)</h3>
+            <ul>
+                <li>Real estate NFT tokenization</li>
+                <li>Physical item NFT marketplace</li>
+                <li>Verification system deployment</li>
+                <li>Insurance partner integration</li>
+                <li>Fractional ownership</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 5: Cross-Chain (Q1 2026)</h3>
+            <ul>
+                <li>Multi-protocol bridge deployment</li>
+                <li>15+ network integration</li>
+                <li>Bridge analytics dashboard</li>
+                <li>Liquidity aggregation</li>
+            </ul>
+
+            <h3 class="section-subtitle">Phase 6: Institutional (Q2 2026)</h3>
+            <ul>
+                <li>Institutional custody solutions</li>
+                <li>Advanced API for algorithmic trading</li>
+                <li>White-label platform offerings</li>
+                <li>Regulatory compliance features</li>
+                <li>OTC desk</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Long-Term Vision</h4>
+                <p>
+                    Beyond 2026, Ziwio aims to become the default platform for all blockchain financial activities, with continued expansion into new asset classes, additional AI capabilities, and deeper traditional finance integration.
+                </p>
+            </div>
+        </section>
+
+        <!-- 10. Conclusion -->
+        <section class="section" id="conclusion">
+            <h2 class="section-title">10. Conclusion</h2>
+            <p>
+                Ziwio represents a paradigm shift in blockchain technology—moving from fragmented, single-purpose applications to a unified, comprehensive financial ecosystem. By combining a proprietary binary tree blockchain, multi-currency wallet, AI-powered trading, DeFi protocols, real-world asset tokenization, and cross-chain interoperability, Ziwio addresses the core challenges preventing mainstream blockchain adoption.
+            </p>
+            <p>
+                Our approach is holistic rather than incremental. Instead of building another wallet, exchange, or DeFi protocol, we've created the complete infrastructure that users actually need. This isn't just about technology—it's about accessibility, security, and user experience.
+            </p>
+            <p>
+                The technical architecture is production-ready, with over 200,000 lines of code, extensive security measures, and real integrations with Bitcoin, Ethereum, stock markets, and payment processors. We're not promising future development—we're delivering a functional platform.
+            </p>
+            <p>
+                As the blockchain industry matures, users will demand platforms that "just work"—where complexity is hidden behind intuitive interfaces, where security is paramount, and where all financial needs can be met in one place. Ziwio is that platform.
+            </p>
+            <p>
+                We invite developers, investors, and users to join us in building the future of decentralized finance. Together, we can bridge the gap between blockchain's potential and its practical utility for billions of people worldwide.
+            </p>
+
+            <div class="highlight-box success">
+                <h4>Join the Revolution</h4>
+                <p>
+                    The waitlist is open. Early adopters will receive lifetime premium features, priority support, and the opportunity to shape the platform's evolution through DAO governance. The future of finance is unified, intelligent, and accessible—and it starts with Ziwio.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="whitepaper-footer">
+            <div class="footer-content">
+                <p><strong>Ziwio Technologies</strong></p>
+                <p>Building the Complete Blockchain Financial Ecosystem</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Website</a>
+                <a href="mailto:info@ziwio.io">Contact</a>
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+                <a href="#">Discord</a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--warm-gray); font-size: 0.875rem;">
+                &copy; 2024 Ziwio Technologies. All rights reserved.<br>
+                This whitepaper is for informational purposes only and does not constitute financial advice.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        const nav = document.querySelector('.main-navigation');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziwio - Complete Blockchain Financial Ecosystem</title>
+    <meta name="description" content="The world's first complete blockchain financial platform combining multi-currency wallet, AI-powered trading, NFT marketplace with real-world asset tokenization, DeFi staking, stock trading, and DAO governance.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --obsidian-black: #141416;
+            --champagne-gold: #F5DEB3;
+            --platinum-silver: #E6E6E8;
+            --deep-charcoal: #262629;
+            --emerald-green: #4FC96B;
+            --ruby-red: #DC3445;
+            --sapphire-blue: #3366CC;
+            --ivory-white: #FAFAF9;
+            --warm-gray: #404042;
+            --light-gray: #F2F2F5;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--obsidian-black);
+            color: var(--ivory-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        .main-navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(20, 20, 22, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(245, 222, 179, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .main-nav a {
+            color: var(--ivory-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--platinum-silver);
+            color: var(--ivory-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--warm-gray);
+            border-color: var(--champagne-gold);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            color: var(--obsidian-black);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 222, 179, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(245, 222, 179, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1200px;
+        }
+        
+        .display-large {
+            font-size: 4.5rem;
+            font-weight: 100;
+            letter-spacing: 0.125rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--platinum-silver);
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--platinum-silver);
+            margin-top: 0.5rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .btn-primary-large {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            color: var(--obsidian-black);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(245, 222, 179, 0.4);
+        }
+        
+        .btn-demo {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            background: transparent;
+            border: 2px solid var(--champagne-gold);
+            color: var(--champagne-gold);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-demo:hover {
+            background: var(--champagne-gold);
+            color: var(--obsidian-black);
+        }
+        
+        .waitlist-badge {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(245, 222, 179, 0.1);
+            border: 1px solid var(--champagne-gold);
+            border-radius: 2rem;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: var(--platinum-silver);
+        }
+        
+        .waitlist-count {
+            color: var(--champagne-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Features Section */
+        .features-overview {
+            padding: 8rem 2rem;
+            background: var(--deep-charcoal);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .heading-large {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.03125rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--platinum-silver);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: var(--obsidian-black);
+            border: 1px solid var(--warm-gray);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--champagne-gold);
+        }
+        
+        .feature-card.premium {
+            border-color: var(--champagne-gold);
+            background: linear-gradient(135deg, #141416 0%, #262629 100%);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--platinum-silver);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-stats span {
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: var(--warm-gray);
+            border-radius: 0.25rem;
+            color: var(--champagne-gold);
+            font-weight: 600;
+        }
+        
+        .feature-link {
+            color: var(--champagne-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        .feature-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Blockchain Section */
+        .blockchain-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .blockchain-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blockchain-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .blockchain-feature {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--deep-charcoal);
+            border-radius: 0.5rem;
+            border: 1px solid var(--warm-gray);
+            transition: all 0.3s;
+        }
+
+        .blockchain-feature:hover {
+            border-color: var(--champagne-gold);
+        }
+
+        .blockchain-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            min-width: 80px;
+        }
+
+        .blockchain-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blockchain-info p {
+            color: var(--platinum-silver);
+            font-size: 0.95rem;
+        }
+
+        .supported-coins {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .coin-tag {
+            padding: 0.5rem 1rem;
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--platinum-silver);
+        }
+        
+        /* Trading Bots Section */
+        .trading-bots-showcase {
+            padding: 8rem 2rem;
+            background: var(--deep-charcoal);
+        }
+        
+        .showcase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .showcase-subtitle {
+            font-size: 1.125rem;
+            color: var(--platinum-silver);
+            margin: 1.5rem 0 3rem;
+        }
+        
+        .bot-strategies {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .strategy {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--obsidian-black);
+            border-radius: 0.5rem;
+            border: 1px solid var(--warm-gray);
+            transition: all 0.3s;
+        }
+        
+        .strategy:hover {
+            border-color: var(--champagne-gold);
+        }
+        
+        .strategy-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            min-width: 100px;
+        }
+        
+        .strategy-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .strategy-info p {
+            color: var(--platinum-silver);
+            margin-bottom: 0.75rem;
+        }
+        
+        .strategy-performance {
+            color: var(--emerald-green);
+            font-weight: 600;
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .ai-feature-tag {
+            padding: 1rem;
+            background: var(--obsidian-black);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--platinum-silver);
+        }
+
+        .ai-feature-tag strong {
+            display: block;
+            color: var(--champagne-gold);
+            margin-bottom: 0.25rem;
+        }
+        
+        /* RWA Section */
+        .rwa-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .rwa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+
+        .rwa-card {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .rwa-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--champagne-gold);
+        }
+
+        .rwa-icon {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            margin-bottom: 1rem;
+        }
+
+        .rwa-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rwa-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rwa-card li {
+            color: var(--platinum-silver);
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .rwa-card li::before {
+            content: "• ";
+            color: var(--champagne-gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Security Section */
+        .security-section {
+            padding: 8rem 2rem;
+            background: var(--deep-charcoal);
+        }
+        
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+        
+        .security-feature {
+            text-align: center;
+            padding: 2rem;
+            background: var(--obsidian-black);
+            border-radius: 1rem;
+            border: 1px solid var(--warm-gray);
+            transition: all 0.3s;
+        }
+        
+        .security-feature:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-4px);
+        }
+        
+        .security-feature .feature-icon {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.1rem;
+        }
+        
+        .security-feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-feature p {
+            color: var(--platinum-silver);
+        }
+
+        /* Integration Section */
+        .integration-section {
+            padding: 8rem 2rem;
+            background: var(--obsidian-black);
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+        }
+
+        .integration-card {
+            background: var(--deep-charcoal);
+            border: 1px solid var(--warm-gray);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .integration-card:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-2px);
+        }
+
+        .integration-card strong {
+            display: block;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .integration-card span {
+            color: var(--platinum-silver);
+            font-size: 0.875rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--obsidian-black) 0%, var(--deep-charcoal) 100%);
+            text-align: center;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.125rem;
+            color: var(--platinum-silver);
+            margin: 1rem auto 3rem;
+            max-width: 600px;
+        }
+        
+        .waitlist-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 1.25rem 1.5rem;
+            background: var(--deep-charcoal);
+            border: 2px solid var(--warm-gray);
+            border-radius: 0.5rem;
+            color: var(--ivory-white);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: var(--champagne-gold);
+            background: var(--obsidian-black);
+        }
+        
+        .email-input::placeholder {
+            color: var(--warm-gray);
+        }
+        
+        .waitlist-note {
+            color: var(--emerald-green);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .cta-features .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--platinum-silver);
+        }
+        
+        .cta-features .feature span:first-child {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            letter-spacing: 0.05rem;
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .waitlist-modal {
+            background: var(--deep-charcoal);
+            border: 2px solid var(--champagne-gold);
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s;
+        }
+        
+        .modal-overlay.active .waitlist-modal {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--platinum-silver);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-header p {
+            color: var(--platinum-silver);
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--platinum-silver);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--obsidian-black);
+            border: 2px solid var(--warm-gray);
+            border-radius: 0.5rem;
+            color: var(--ivory-white);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--champagne-gold);
+        }
+        
+        .form-group input::placeholder {
+            color: var(--warm-gray);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.2rem;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            color: var(--platinum-silver);
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label a {
+            color: var(--champagne-gold);
+            text-decoration: none;
+        }
+        
+        .checkbox-group label a:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            color: var(--obsidian-black);
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 222, 179, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .perks-list {
+            background: var(--obsidian-black);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .perks-list h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .perks-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .perks-list li {
+            color: var(--platinum-silver);
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+        
+        .perks-list li::before {
+            content: "• ";
+            color: var(--emerald-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background: var(--deep-charcoal);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--warm-gray);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--platinum-silver);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--warm-gray);
+            border-radius: 50%;
+            color: var(--ivory-white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--champagne-gold);
+            color: var(--obsidian-black);
+        }
+        
+        .footer-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: var(--platinum-silver);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--warm-gray);
+            text-align: center;
+            color: var(--platinum-silver);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .display-large {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .showcase-content,
+            .blockchain-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid,
+            .rwa-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+
+            .ai-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="/" class="logo">ZIWIO</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">Platform</a></li>
+                    <li><a href="#blockchain">Blockchain</a></li>
+                    <li><a href="#trading">AI Trading</a></li>
+                    <li><a href="#rwa">Real Assets</a></li>
+                    <li><a href="#security">Security</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-secondary">Documentation</button>
+                <button class="btn-primary">Join Waitlist</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="display-large">
+                Complete <span class="gradient-text">Blockchain Financial</span> Ecosystem
+            </h1>
+            <p class="hero-subtitle">
+                The world's first comprehensive platform combining multi-currency wallet, AI-powered trading, NFT marketplace with real-world asset tokenization, DeFi staking, stock trading, cross-chain bridges, and DAO governance. All powered by our proprietary binary tree blockchain.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">13+</span>
+                    <span class="stat-label">Supported Cryptocurrencies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">AI Trading Strategies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Cross-Chain Networks</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="btn-primary-large">Join Waitlist</button>
+                <a href="whitepaper.html" class="btn-demo" style="text-decoration: none; display: inline-block;">View Whitepaper</a>
+            </div>
+            
+            <div class="waitlist-badge">
+                <span class="waitlist-count">2,847</span> people on the waitlist
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockchain Infrastructure Section -->
+    <section class="blockchain-section" id="blockchain">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Proprietary Binary Tree Blockchain</h2>
+                <p class="section-subtitle">
+                    Custom blockchain architecture with DPoS consensus, enabling faster transactions and energy-efficient operations
+                </p>
+            </div>
+            <div class="blockchain-content">
+                <div>
+                    <div class="blockchain-features">
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">BINARY TREE</div>
+                            <div class="blockchain-info">
+                                <h4>Unique Architecture</h4>
+                                <p>Binary tree structure allows parallel block creation, significantly faster than traditional linear blockchains</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">DPoS</div>
+                            <div class="blockchain-info">
+                                <h4>Delegated Proof of Stake</h4>
+                                <p>Energy-efficient consensus mechanism with validator delegation and democratic governance</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">P2P</div>
+                            <div class="blockchain-info">
+                                <h4>WebSocket P2P Network</h4>
+                                <p>Real-time peer-to-peer networking with seed node discovery and synchronization</p>
+                            </div>
+                        </div>
+                        <div class="blockchain-feature">
+                            <div class="blockchain-icon">ZWO</div>
+                            <div class="blockchain-info">
+                                <h4>Native Token</h4>
+                                <p>ZWO powers transactions, staking rewards, and governance with deflationary tokenomics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">Multi-Currency HD Wallet</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 2rem;">
+                        BIP39/32/44 compliant hierarchical deterministic wallet supporting major cryptocurrencies with real address generation and transaction signing.
+                    </p>
+                    <div class="supported-coins">
+                        <span class="coin-tag">Bitcoin (BTC)</span>
+                        <span class="coin-tag">Ethereum (ETH)</span>
+                        <span class="coin-tag">Litecoin (LTC)</span>
+                        <span class="coin-tag">Solana (SOL)</span>
+                        <span class="coin-tag">Cardano (ADA)</span>
+                        <span class="coin-tag">Polkadot (DOT)</span>
+                        <span class="coin-tag">Avalanche (AVAX)</span>
+                        <span class="coin-tag">Polygon (MATIC)</span>
+                        <span class="coin-tag">Chainlink (LINK)</span>
+                        <span class="coin-tag">Uniswap (UNI)</span>
+                        <span class="coin-tag">Bitcoin Cash (BCH)</span>
+                        <span class="coin-tag">Dogecoin (DOGE)</span>
+                        <span class="coin-tag">ZWO Token</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-overview" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Complete Financial Platform</h2>
+                <p class="section-subtitle">
+                    Professional-grade tools for cryptocurrency, DeFi, NFTs, real-world assets, and traditional stock trading
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card premium">
+                    <div class="feature-icon">DEFI</div>
+                    <h3>DeFi Staking & Yield</h3>
+                    <p>Flexible staking periods with auto-compounding rewards, yield farming, and revenue sharing from platform fees</p>
+                    <div class="feature-stats">
+                        <span>7-180 Day Periods</span>
+                        <span>Auto-Compound</span>
+                        <span>Real Yield</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">BRIDGE</div>
+                    <h3>Cross-Chain Bridges</h3>
+                    <p>Seamless asset transfers across 15+ networks using Wormhole, LayerZero, and proprietary bridge technology</p>
+                    <div class="feature-stats">
+                        <span>Multi-Protocol</span>
+                        <span>Low Fees</span>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">NFT</div>
+                    <h3>NFT Marketplace</h3>
+                    <p>Create, trade, and manage NFT collections with on-chain storage and integrated real-world asset support</p>
+                    <div class="feature-stats">
+                        <span>On-Chain Storage</span>
+                        <span>RWA Support</span>
+                        <span>Royalties</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">STOCK</div>
+                    <h3>Stock Trading</h3>
+                    <p>Real stock trading via Alpaca API with paper trading mode for risk-free strategy testing</p>
+                    <div class="feature-stats">
+                        <span>Commission-Free</span>
+                        <span>Paper Trading</span>
+                        <span>US Markets</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">LAUNCH</div>
+                    <h3>Token Launchpad</h3>
+                    <p>Launch ERC-20 and BEP-20 tokens with built-in liquidity pools, vesting, and fair launch mechanisms</p>
+                    <div class="feature-stats">
+                        <span>Multi-Chain</span>
+                        <span>Vesting</span>
+                        <span>Liquidity Lock</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">DAO</div>
+                    <h3>DAO Governance</h3>
+                    <p>On-chain governance with proposal creation, token-weighted voting, and treasury management</p>
+                    <div class="feature-stats">
+                        <span>Proposals</span>
+                        <span>Voting</span>
+                        <span>Treasury</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Trading Section -->
+    <section class="trading-bots-showcase" id="trading">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">AI-Powered Trading Intelligence</h2>
+                <p class="section-subtitle">
+                    Advanced trading automation with machine learning, neural networks, and quantum-inspired optimization
+                </p>
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Automated Trading Strategies</h3>
+                    <p class="showcase-subtitle">
+                        Five distinct trading bot strategies powered by advanced algorithms and real-time market analysis
+                    </p>
+                    <div class="bot-strategies">
+                        <div class="strategy">
+                            <div class="strategy-icon">MOMENTUM</div>
+                            <div class="strategy-info">
+                                <h4>Momentum Trading</h4>
+                                <p>Identifies and follows market trends with risk management</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">REVERSION</div>
+                            <div class="strategy-info">
+                                <h4>Mean Reversion</h4>
+                                <p>Statistical analysis to identify overbought/oversold conditions</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">ARBITRAGE</div>
+                            <div class="strategy-info">
+                                <h4>Arbitrage</h4>
+                                <p>Cross-exchange price discrepancy exploitation</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">GRID</div>
+                            <div class="strategy-info">
+                                <h4>Grid Trading</h4>
+                                <p>Automated buy low, sell high in range-bound markets</p>
+                            </div>
+                        </div>
+                        <div class="strategy">
+                            <div class="strategy-icon">DCA</div>
+                            <div class="strategy-info">
+                                <h4>Dollar Cost Averaging</h4>
+                                <p>Regular purchases to reduce timing risk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Advanced AI Features</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 2rem;">
+                        Cutting-edge machine learning and artificial intelligence for market intelligence
+                    </p>
+                    <div class="ai-features">
+                        <div class="ai-feature-tag">
+                            <strong>Predictive Analytics</strong>
+                            <span>Price forecasting models</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Social Sentiment</strong>
+                            <span>Twitter/Reddit analysis</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Neural Networks</strong>
+                            <span>Deep learning models</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Market Intelligence</strong>
+                            <span>News aggregation AI</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Risk Management</strong>
+                            <span>AI-powered position sizing</span>
+                        </div>
+                        <div class="ai-feature-tag">
+                            <strong>Quantum Optimizer</strong>
+                            <span>Portfolio optimization</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--platinum-silver); margin-top: 2rem; font-size: 0.95rem;">
+                        Includes AI chat assistant for natural language trading commands, market analysis, and educational content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real World Assets Section -->
+    <section class="rwa-section" id="rwa">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Real World Asset Tokenization</h2>
+                <p class="section-subtitle">
+                    Bridge physical assets to blockchain with NFT-based ownership, verification, and fractional investment
+                </p>
+            </div>
+            <div class="rwa-grid">
+                <div class="rwa-card">
+                    <div class="rwa-icon">REAL ESTATE</div>
+                    <h3>Property NFTs</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Tokenize real estate with on-chain ownership verification
+                    </p>
+                    <ul>
+                        <li>Residential properties</li>
+                        <li>Commercial buildings</li>
+                        <li>Land parcels</li>
+                        <li>REIT tokenization</li>
+                        <li>Fractional ownership</li>
+                        <li>Legal document integration</li>
+                    </ul>
+                </div>
+                <div class="rwa-card">
+                    <div class="rwa-icon">PHYSICAL</div>
+                    <h3>Physical Item NFTs</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Link physical items to blockchain for authenticity
+                    </p>
+                    <ul>
+                        <li>Luxury goods (watches, jewelry)</li>
+                        <li>Collectibles (art, antiques)</li>
+                        <li>Vehicles (cars, boats)</li>
+                        <li>Electronics</li>
+                        <li>Provenance tracking</li>
+                        <li>Insurance integration</li>
+                    </ul>
+                </div>
+                <div class="rwa-card">
+                    <div class="rwa-icon">MARKETPLACE</div>
+                    <h3>RWA Marketplace</h3>
+                    <p style="color: var(--platinum-silver); margin-bottom: 1.5rem;">
+                        Trade tokenized real-world assets securely
+                    </p>
+                    <ul>
+                        <li>Secondary market trading</li>
+                        <li>Fractional shares</li>
+                        <li>Yield distribution</li>
+                        <li>Ownership transfer</li>
+                        <li>Verification system</li>
+                        <li>Price discovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section" id="security">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Enterprise-Grade Security</h2>
+                <p class="section-subtitle">
+                    Multi-layered security infrastructure protecting your assets and data
+                </p>
+            </div>
+            <div class="security-features">
+                <div class="security-feature">
+                    <div class="feature-icon">ENCRYPTION</div>
+                    <h3>Secure Keychain</h3>
+                    <p>Military-grade encryption with iOS Secure Enclave integration</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">BIOMETRIC</div>
+                    <h3>Biometric Auth</h3>
+                    <p>Face ID and Touch ID for secure access</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">SSL</div>
+                    <h3>SSL Pinning</h3>
+                    <p>Certificate pinning prevents man-in-the-middle attacks</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">DETECT</div>
+                    <h3>Threat Detection</h3>
+                    <p>Jailbreak, root, and debugger detection</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">FRAUD</div>
+                    <h3>Fraud Prevention</h3>
+                    <p>Real-time transaction monitoring and fraud detection</p>
+                </div>
+                <div class="security-feature">
+                    <div class="feature-icon">AUDIT</div>
+                    <h3>Audit Trails</h3>
+                    <p>Complete logging for compliance and security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="integration-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading-large">Seamless Integrations</h2>
+                <p class="section-subtitle">
+                    Connected to the best services in cryptocurrency, payments, and trading
+                </p>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <strong>CoinGecko</strong>
+                    <span>Real-time prices</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Alpaca</strong>
+                    <span>Stock trading API</span>
+                </div>
+                <div class="integration-card">
+                    <strong>MoonPay</strong>
+                    <span>Fiat on-ramp</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Transak</strong>
+                    <span>Alternative on-ramp</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Stripe</strong>
+                    <span>Payment processing</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Wormhole</strong>
+                    <span>Cross-chain bridge</span>
+                </div>
+                <div class="integration-card">
+                    <strong>LayerZero</strong>
+                    <span>Omnichain protocol</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Bitcoin Network</strong>
+                    <span>Direct integration</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Ethereum Network</strong>
+                    <span>Web3 support</span>
+                </div>
+                <div class="integration-card">
+                    <strong>Apple Pay</strong>
+                    <span>Mobile payments</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="heading-large">Join the Future of Finance</h2>
+            <p class="cta-subtitle">
+                Be among the first to experience the complete blockchain financial ecosystem. Early access members receive lifetime benefits.
+            </p>
+            
+            <div class="waitlist-form">
+                <input type="email" placeholder="Enter your email" class="email-input" id="waitlist-email">
+                <button class="btn-primary-large" id="join-waitlist-btn">Join Waitlist</button>
+            </div>
+            <p class="waitlist-note">First 1,000 users receive lifetime premium features</p>
+            
+            <div class="cta-features">
+                <div class="feature">
+                    <span>COMPLETE</span>
+                    <span>All-in-One Platform</span>
+                </div>
+                <div class="feature">
+                    <span>BLOCKCHAIN</span>
+                    <span>Proprietary Technology</span>
+                </div>
+                <div class="feature">
+                    <span>AI</span>
+                    <span>Trading Automation</span>
+                </div>
+                <div class="feature">
+                    <span>RWA</span>
+                    <span>Real Asset Bridge</span>
+                </div>
+                <div class="feature">
+                    <span>SECURE</span>
+                    <span>Enterprise Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">ZIWIO</div>
+                    <p class="footer-description">
+                        The world's first complete blockchain financial ecosystem combining wallet, trading, DeFi, NFTs, real-world assets, and governance.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">X</a>
+                        <a href="#" aria-label="Discord">D</a>
+                        <a href="#" aria-label="Telegram">T</a>
+                        <a href="#" aria-label="GitHub">G</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="#">Blockchain</a></li>
+                        <li><a href="#">Wallet</a></li>
+                        <li><a href="#">AI Trading</a></li>
+                        <li><a href="#">DeFi Staking</a></li>
+                        <li><a href="#">NFT Marketplace</a></li>
+                        <li><a href="#">Stock Trading</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Developers</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">SDK</a></li>
+                        <li><a href="#">Smart Contracts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Audits</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ziwio Technologies. All rights reserved. Blockchain Financial Ecosystem.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="waitlistModal">
+        <div class="waitlist-modal">
+            <button class="modal-close" id="closeModal">&times;</button>
+            
+            <div class="modal-header">
+                <h3>Join the Waitlist</h3>
+                <p>Early access to the complete blockchain financial ecosystem</p>
+            </div>
+            
+            <div class="perks-list">
+                <h4>Early Access Benefits</h4>
+                <ul>
+                    <li>Lifetime premium subscription</li>
+                    <li>Priority customer support</li>
+                    <li>Exclusive launch bonuses</li>
+                    <li>Beta testing access</li>
+                    <li>Reduced trading fees</li>
+                </ul>
+            </div>
+            
+            <form id="waitlistForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">Primary Interest *</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Select your interest...</option>
+                        <option value="wallet">Multi-Currency Wallet</option>
+                        <option value="trading">AI Trading Bots</option>
+                        <option value="defi">DeFi Staking</option>
+                        <option value="nft">NFT Marketplace</option>
+                        <option value="rwa">Real World Assets</option>
+                        <option value="stock">Stock Trading</option>
+                        <option value="blockchain">Blockchain Technology</option>
+                        <option value="all">All Features</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Crypto Experience</label>
+                    <select id="experience" name="experience">
+                        <option value="">Select experience level...</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced Trader</option>
+                        <option value="developer">Developer</option>
+                        <option value="institutional">Institutional</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    <label for="newsletter">
+                        Send me updates about Ziwio and new features
+                    </label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a> *
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGdoi3WkdT_IDJ8rSWNX1Woo-fdTYTjzs",
+            authDomain: "ziwio-waitlist.firebaseapp.com",
+            projectId: "ziwio-waitlist",
+            storageBucket: "ziwio-waitlist.firebasestorage.app",
+            messagingSenderId: "638339110715",
+            appId: "1:638339110715:web:159b7d9dda7bef0e18891e"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        const nav = document.querySelector('.main-navigation');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(20, 20, 22, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                nav.style.background = 'rgba(20, 20, 22, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('waitlistModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const waitlistForm = document.getElementById('waitlistForm');
+        
+        function openWaitlistModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeWaitlistModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Button handlers
+        document.querySelectorAll('.btn-primary, .btn-primary-large, #join-waitlist-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openWaitlistModal();
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeWaitlistModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeWaitlistModal();
+        });
+        
+        // Form submission
+        waitlistForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                interest: document.getElementById('interest').value,
+                experience: document.getElementById('experience').value,
+                newsletter: document.getElementById('newsletter').checked,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            };
+            
+            const submitBtn = waitlistForm.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Joining...';
+            
+            try {
+                await db.collection('waitlist').add(formData);
+                
+                closeWaitlistModal();
+                waitlistForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Waitlist';
+                
+                showSuccessMessage(formData.fullName);
+            } catch (error) {
+                console.error('Error adding to waitlist:', error);
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Waitlist';
+            }
+        });
+        
+        function showSuccessMessage(name) {
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, #F5DEB3 0%, #EBC88C 100%);
+                color: #141416; padding: 2rem 3rem; border-radius: 1rem;
+                font-size: 1.2rem; font-weight: 600; z-index: 10000;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); text-align: center;
+                max-width: 500px;
+            `;
+            message.innerHTML = `
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Success!</div>
+                <div>Welcome to the waitlist, ${name}!</div>
+                <div style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">
+                    Check your email for confirmation and next steps
+                </div>
+            `;
+            document.body.appendChild(message);
+            setTimeout(() => {
+                message.style.transition = 'opacity 0.5s';
+                message.style.opacity = '0';
+                setTimeout(() => message.remove(), 500);
+            }, 4000);
+        }
+
+        // Waitlist counter animation
+        const waitlistCount = document.querySelector('.waitlist-count');
+        if (waitlistCount) {
+            let count = 2847;
+            setInterval(() => {
+                count += Math.floor(Math.random() * 3);
+                waitlistCount.textContent = count.toLocaleString();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
